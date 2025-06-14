@@ -1,0 +1,25 @@
+body{
+  padding: 0px;
+}
+.size_photo{
+  width: 350px;
+  height: 250px;
+}
+.flex{
+  margin-left: 15%;
+ 
+  display: flex;
+ flex-wrap: wrap;
+ align-content:  center;
+ gap: 30px;
+ line-height: 1px;
+}
+.theCrde{
+  height: 500px;
+  width: 350px;
+  border-radius: 10px;
+  background-color: antiquewhite;
+}
+.text_algin{
+word-wrap: normal;
+}
