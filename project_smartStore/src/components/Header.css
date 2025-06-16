@@ -1,0 +1,46 @@
+body{
+    margin: 0px;
+}
+
+
+.header1{
+    background-color:rgb(0, 0, 0);
+    margin-bottom: 5%;
+}
+
+.header2{
+   
+    height: 100px;
+    width: 70%;
+    margin-left: 15%;
+    background-color: rgb(0, 0, 0);
+}
+
+
+
+.logo{
+    margin-left: 10%;
+ font-size: 35px ;
+ color: white;
+}
+.List{
+   margin-right: 3%;
+    display: flex;
+    justify-content:space-between;
+  
+    
+}
+.size{
+    margin-top: 0px;
+    color: rgb(255, 255, 255);
+    font-weight: 100px;
+font-size: 22px;
+list-style: none;
+}
+.List2{
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    gap: 30px;
+}

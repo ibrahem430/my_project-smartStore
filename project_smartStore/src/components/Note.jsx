@@ -10,8 +10,8 @@ import React from "react";
           <img className="size_photo" src={props.img} alt="avatar_img" />
           <h2>{props.name}</h2>
           <br/>
-          <p className="text_algin">{props.tel}</p>
-          <p className="text_algin" >{props.email}</p>
+          <p className="text_algin">{props.tel.substring(0, 200)}</p>
+          <p className="text_algin" >{props.email.substring(0, 200)}</p>
         </div>
       );
     }
