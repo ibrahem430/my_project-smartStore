@@ -10,13 +10,19 @@ function Header() {
  <div><p className="logo" >TechSmart</p> </div>
    
 <div >
-<ul className="List2">
-<li className="size">Home</li>
+<div className="List2">
+{/* <li className="size">Home</li>
 <li className="size">Contact</li>
 <li className="size">About</li>
 <li className="size">Login</li>
-<li className="size">Register  </li>
-</ul>
+<li className="size">Register  </li> */}
+<button  className="size">Home</button>
+<button  className="size">Contact</button>
+<button  className="size">About</button>
+<button  className="size">Login</button>
+<button  className="size">Register</button>
+
+</div>
 </div>
 </div>
    </div>

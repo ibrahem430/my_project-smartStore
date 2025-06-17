@@ -19,8 +19,22 @@ body{
   width: 250px;
   border-radius: 10px;
   background-color: rgb(244, 244, 244);
+  text-align: center;
 }
 .text_algin{
 word-wrap: normal;
 line-height: 15px;
 }
+.click{
+  text-align: center;
+  padding: 7px;
+  width:55%;
+  border-radius: 50px;
+  background-color: black;
+  color: white;
+  
+}
+.click:hover {
+      color: rgb(0, 0, 0); /* Change to any color you want */
+      background-color: rgb(221, 221, 221);
+    }
