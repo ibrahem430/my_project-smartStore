@@ -1,0 +1,41 @@
+import React from 'react'
+import facebook from "../components/Assets/photoOfContact/2023_Facebook_icon.svg"
+import instgram from "../components/Assets/photoOfContact/Instagram_logo_2022.svg"
+import x from "../components/Assets/photoOfContact/download.png"
+
+const thestyle={
+    display: "flex",
+    flexWrap: "wrap",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: "60px" ,
+      marginTop:"5%" 
+    
+}
+const thePage={
+    marginLeft:"20%",
+    marginRight:"20%" ,
+     marginTop:"10%" 
+}
+
+
+
+function Contact() {
+  return (
+         <div style={thePage}>
+            <h1 style={{ textAlign:"center"}}>Contact us</h1>
+    <div style={thestyle}>
+        <div><img style={{height:"120px" ,width:"120px"}} src={facebook} alt="" />
+        <h2 style={{textAlign:"center"}}>Facebook</h2>
+        </div>
+        <div><img style={{height:"120px" ,width:"120px"}} src={instgram} alt="" />
+        <h2 style={{textAlign:"center"}}>Instagram</h2>
+        </div>
+        <div><img style={{height:"120px" ,width:"150px", borderRadius:"50%"}} src={x} alt="" />
+        <h2 style={{textAlign:"center"}}>x</h2>
+        </div>
+    </div></div>
+  )
+}
+
+export default Contact

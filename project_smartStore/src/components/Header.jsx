@@ -24,8 +24,10 @@ function Header() {
 
 </div>
 </div>
+
 </div>
    </div>
+    <img className="cart" src="https://www.freeiconspng.com/uploads/cart-icon-16.png"/>
    </div>
   );
 }

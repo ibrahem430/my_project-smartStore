@@ -1,0 +1,15 @@
+.theDiv{
+    margin-right: 12%;
+    margin-left: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+.theImg:hover{
+width: 105%;
+
+}
+/* .background{
+    background-color: black;
+} */

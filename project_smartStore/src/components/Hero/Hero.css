@@ -1,0 +1,44 @@
+.hero{
+    margin-top: 10%;
+    margin-left: 15%;
+    margin-right: 15%;
+    height: 100vh;
+    
+}
+.hero-prodect{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    
+}
+.size-prodect{
+    height: 200px;
+    width: 200px;
+}
+.size-prodect a{
+    text-decoration: none;
+    color: #000;
+}
+.theSizeOfPhoto{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    border: 6px rgb(255, 255, 255) solid;
+
+}
+.theSizeOfPhoto:hover{
+   height: 160px;
+    width: 160px;
+   
+
+}
+.thetext{
+    text-align: center;
+    margin-right: 10%;
+}
+.thetext:hover{
+    font-size: 27px;
+    color: rgb(80, 77, 77);
+}
