@@ -2,28 +2,22 @@ body{
   padding: 0px;
 }
 .size_photo{
-  width: 250px;
+  width: 200px;
   height: 150px;
 }
-.flex{
-  margin-left: 18%;
-   margin-right: 10%;
-  display: flex;
- flex-wrap: wrap;
- align-content:  center;
- gap: 30px;
- line-height: 1px;
-}
+
 .theCrde{
   height: 350px;
   width: 250px;
   border-radius: 10px;
   background-color: rgb(244, 244, 244);
   text-align: center;
+ 
 }
 .text_algin{
 word-wrap: normal;
-line-height: 15px;
+line-height: 17px;
+margin: 20px;
 }
 .click{
   text-align: center;

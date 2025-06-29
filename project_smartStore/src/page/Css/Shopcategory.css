@@ -1,0 +1,9 @@
+.flex{
+  margin-left: 18%;
+   margin-right: 10%;
+  display: flex;
+ flex-wrap: wrap;
+ align-content:  center;
+ gap: 30px;
+ line-height: 1px;
+}

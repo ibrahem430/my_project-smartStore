@@ -21,7 +21,7 @@ const thePage={
 
 
 function Contact() {
-  return (
+  return (<div>
          <div style={thePage}>
             <h1 style={{ textAlign:"center"}}>Contact us</h1>
     <div style={thestyle}>
@@ -35,6 +35,24 @@ function Contact() {
         <h2 style={{textAlign:"center"}}>x</h2>
         </div>
     </div></div>
+
+    <div><p><span style={{}}>Contact Details</span>
+Address:
+
+City Center for Computers Wasfi Al-Tal Streen ( Gardenz ), PizzaHut Building #28 Amman , Jordan
+
+Working Time:
+
+Saturday - Wednesday : 8:00 AM - 6:30 PM
+Thursday : Holiday (رأس السنة الهجرية)
+Friday: Closed
+
+Telephone: 06-5626110 - 06-5626111 - 06-5626114
+
+WhatsApp: 0796802525
+
+Email: sales@citycenter.Jo</p></div>
+    </div>
   )
 }
 

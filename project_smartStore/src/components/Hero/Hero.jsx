@@ -28,36 +28,36 @@ function Hero() {
         <div className="hero-prodect">
             
             <div className='size-prodect'>
-              <Link to="/Pcs">  <img className='theSizeOfPhoto' src={pcImg} alt="" /></Link>
-             <Link to="/Pcs">  <h2 className='thetext'>PCs</h2></Link>
+              <Link to="/pcs">  <img className='theSizeOfPhoto' src={pcImg} alt="" /></Link>
+             <Link to="/pcs">  <h2 className='thetext'>PCs</h2></Link>
             </div>
             <div className='size-prodect'>
-            <Link to="laptop"> <img className='theSizeOfPhoto' src={laptop} alt="laptop" /></Link>
-             <Link to="laptop"><h2 className='thetext'>Laptops</h2></Link>
+            <Link to="/Laptop"> <img className='theSizeOfPhoto' src={laptop} alt="laptop" /></Link>
+             <Link to="/Laptop"><h2 className='thetext'>Laptops</h2></Link>
             </div>
          <div className='size-prodect'>
-             <Link to="gaming" > <img className='theSizeOfPhoto' src={gamingImg} alt="" /></Link>
-            <Link to="gaming"> <h2 className='thetext'>Gaming </h2></Link>
+             <Link to="/gaming" > <img className='theSizeOfPhoto' src={gamingImg} alt="" /></Link>
+            <Link to="/gaming"> <h2 className='thetext'>Gaming </h2></Link>
            </div>
            <div className='size-prodect'>
-              <Link to="keyboards"> <img className='theSizeOfPhoto' src={keyboardImg} alt="" /></Link> 
-             <Link to="keyboards">    <h2 className='thetext'>Keyboards</h2></Link>
+              <Link to="/keyboards"> <img className='theSizeOfPhoto' src={keyboardImg} alt="" /></Link> 
+             <Link to="/keyboards">    <h2 className='thetext'>Keyboards</h2></Link>
            </div>
            <div className='size-prodect'> 
-             <Link to="mouse" >   <img className='theSizeOfPhoto' src={mouseImg} alt="" /> </Link>
-             <Link to="mouse" >  <h2 className='thetext'>Mouses</h2></Link> 
+             <Link to="/mouse" >   <img className='theSizeOfPhoto' src={mouseImg} alt="" /> </Link>
+             <Link to="/mouse" >  <h2 className='thetext'>Mouses</h2></Link> 
            </div>
            <div className='size-prodect'>
-               <Link to="headphones">  <img className='theSizeOfPhoto' src={headImg} alt="" /></Link>
-              <Link to="headphones">   <h2 className='thetext'>Headphones</h2></Link> 
+               <Link to="/headphones">  <img className='theSizeOfPhoto' src={headImg} alt="" /></Link>
+              <Link to="/headphones">   <h2 className='thetext'>Headphones</h2></Link> 
            </div>
            <div className='size-prodect'>
-             <Link to="monitor"><img className='theSizeOfPhoto' src={monitorImg} alt="" /></Link>
-            <Link to="monitor" ><h2 className='thetext'>monitors</h2></Link> 
+             <Link to="/monitor"><img className='theSizeOfPhoto' src={monitorImg} alt="" /></Link>
+            <Link to="/monitor" ><h2 className='thetext'>monitors</h2></Link> 
            </div>
            <div className='size-prodect'>
-            <Link to="charges"> <img className='theSizeOfPhoto' src={chargeImg} alt="" /></Link>
-            <Link to="charges"><h2 className='thetext'>Chargers</h2></Link> 
+            <Link to="/charges"> <img className='theSizeOfPhoto' src={chargeImg} alt="" /></Link>
+            <Link to="/charges"><h2 className='thetext'>Chargers</h2></Link> 
            </div>
             </div>  
         </div></div>
