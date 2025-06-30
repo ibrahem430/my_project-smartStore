@@ -49,7 +49,7 @@ function Hero() {
            </div>
            <div className='size-prodect'>
                <Link to="/headphones">  <img className='theSizeOfPhoto' src={headImg} alt="" /></Link>
-              <Link to="/headphones">   <h2 className='thetext'>Headphones</h2></Link> 
+              <Link to="/headphones">   <h2 className='thetext'>Headset</h2></Link> 
            </div>
            <div className='size-prodect'>
              <Link to="/monitor"><img className='theSizeOfPhoto' src={monitorImg} alt="" /></Link>

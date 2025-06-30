@@ -1,5 +1,6 @@
 import React from 'react'
 import "./Prodect.css"
+import { Link } from 'react-router-dom';
 
 
     function Card(props) {
@@ -7,10 +8,14 @@ import "./Prodect.css"
 
         <div style={{margin:"0px"}}
         className="theCrde">
-          
-          <img className="size_photo" src={props.image} alt="avatar_img" />
-          <h3 className="text_algin" >{props.name.substring(0, 100)}</h3>
-          <br/>
+         <div className='cover-of-img'>
+          <img className="size_photo" src={props.image} alt="avatar_img" /></div>
+<div className='cover-of-text'>
+  <Link className='link-of-item' to={`/pageOfitem/${props.id}`}>
+    <h3 className="text_algin">{props.name.substring(0, 90)}</h3>
+  </Link>
+</div>
+          <h3 className='price' >${props.new_price}</h3>
           {/* <p className="text_algin">{props.tel.substring(0, 100)}</p>
           <p className="text_algin" >{props.email.substring(0, 100)}</p> */}
           <div className='thebutton'> <button className="click">Add to Cart</button></div>

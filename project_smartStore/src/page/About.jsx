@@ -31,6 +31,7 @@ Our goal is to provide the best and smoothest shopping experience for our users 
 What makes TechSmart unique is the use of artificial intelligence to deliver personalized product recommendations, a smart assistant to help users search for items easily, and predictive analytics to improve our services and ensure product availability.<br/> <br/>
 
 We are constantly working to develop and improve our platform to meet user expectations and deliver a modern, high-quality digital shopping experience</p></div>
+ <div  style={{marginBottom:"5%"}}></div>
  </div> )
 }
 

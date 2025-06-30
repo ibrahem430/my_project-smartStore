@@ -65,7 +65,7 @@ let all_product = [
   {
     id: 3,
     name: "Laptop MSI Katana 15 | Intel® Core™ i7-13620H, 16GB DDR5, RTX 4060 8GB & 15.6\" FHD 144Hz",
-    category: "Laptop",
+    category: "pcs",
     image: p3_img,
     new_price: 1150,
     old_price: 1299,

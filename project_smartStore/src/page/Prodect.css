@@ -2,24 +2,41 @@ body{
   padding: 0px;
 }
 .size_photo{
-  width: 200px;
+  width: 175px;
   height: 150px;
+ 
+}
+.cover-of-img{
+   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .theCrde{
   height: 350px;
   width: 250px;
-  border-radius: 10px;
-  background-color: rgb(244, 244, 244);
-  text-align: center;
+   display: grid ;
+   grid-template: 150px 100px 25px 75px;
+   background-color: rgb(247, 247, 247);
+   border-radius: 10px;
  
+}
+.cover-of-text{
+    display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .text_algin{
 word-wrap: normal;
-line-height: 17px;
-margin: 20px;
+line-height: 19px;
+margin-left: 8%;
+
+
 }
 .click{
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   padding: 7px;
   width:55%;
@@ -31,4 +48,19 @@ margin: 20px;
 .click:hover {
       color: rgb(0, 0, 0); /* Change to any color you want */
       background-color: rgb(221, 221, 221);
+    }
+
+    .thebutton{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .price{
+      text-align: center;
+      color: red;
+    }
+
+    .link-of-item{
+      text-decoration: none;
+      color: black;
     }

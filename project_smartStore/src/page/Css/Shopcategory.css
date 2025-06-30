@@ -1,9 +1,23 @@
-.flex{
-  margin-left: 18%;
+
+.thecover-of-card{
+      margin-left: 10%;
    margin-right: 10%;
+}
+
+.flex{
+
   display: flex;
  flex-wrap: wrap;
  align-content:  center;
  gap: 30px;
  line-height: 1px;
+ justify-content: center;
+}
+.the-header-of-page img{
+    width: 100%;
+}
+.the-header-of-page{margin-bottom: 10%;
+margin-left: 10%;
+margin-right: 10%;
+
 }
