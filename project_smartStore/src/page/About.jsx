@@ -1,4 +1,5 @@
 import React from 'react'
+import Search from '../components/Search/Search';
 
 
 
@@ -23,6 +24,8 @@ const background={
   return (
     <div style={background}>
     <div style={thepacge}>
+      {/* <Search/> */}
+     
         <h2>About</h2>
         <p style={theFontFamily}><span style={{color:"rgb(173, 12, 12)", fontSize:"30px"}}>TechSmart</span> is a smart online store specialized in selling electronic equipment such as computers, laptops, monitors, headphones, keyboards, mice, and chargers.<br/><br/>
 

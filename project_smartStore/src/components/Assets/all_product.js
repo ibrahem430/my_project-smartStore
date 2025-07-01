@@ -173,7 +173,35 @@ let all_product = [
     DisplayTechnology: "IPS QHD 165Hz",
     DisplayResolution: "2560 x 1440",
     Keyboard: "RGB Backlit Keyboard"
-  }
+  },
+  {
+    id: 7,
+    name: "Laptop Lenovo LOQ Gaming 15IRX9 | AI-Powered Gaming PC 13Gen Intel® Core™ i7-13650HX, 24GB DDR5 NVIDIA GeForce RTX 4050 6GB & 15.6\"",
+    category: "Laptop",
+    image: p1_img,
+    new_price: 500,
+    old_price: 550,
+    ProcessorGeneration: "13th Generation",
+    ProcessorFamily: "Intel Core i7-13650HX",
+    ProcessorSpeed: "Up to 4.90 GHz",
+    ProcessorCache: "24MB",
+    NumberOfCores: "14 Cores - 20 Threads",
+    RAMCapacity: "24GB",
+    MemoryType: "DDR5 4800 Mhz",
+    StorageCapacity: "512GB",
+    StorageType: "SSD M.2 2242 PCIe® 4.0x4 NVMe®",
+    GraphicManufacturer: "NVIDIA",
+    GraphicModel: "GeForce RTX 4050",
+    BoostClock: "2370MHz",
+    TGP: "105W",
+    GraphicMemory: "6GB",
+    GraphicMemoryType: "DDR6",
+    GraphicMemorySource: "Dedicated",
+    DisplaySize: "15.6\"",
+    DisplayTechnology: "IPS-Level G-SYNC®",
+    DisplayResolution: "1920 x 1080 FHD 144Hz",
+    Keyboard: "White Backlit Keyboard"
+  },
 ];
 
 export default all_product;

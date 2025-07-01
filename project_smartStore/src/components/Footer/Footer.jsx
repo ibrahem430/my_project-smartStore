@@ -11,7 +11,7 @@ function Footer() {
    
     <div className='footer'>
         
-        <div className='footer-logo'><Link to="/" ><h1>TechSmart</h1></Link></div>
+        <div  className='footer-logo'><Link to="/" ><h1 onClick={() => window.scrollTo(0, 0)} >TechSmart</h1></Link></div>
        <ul className='theFooter-link'>
         <li>Company</li>
         <li>Products</li>

@@ -1,0 +1,16 @@
+.thecover-of-card2{
+      margin-left: 10%;
+   margin-right: 10%;
+   margin-top: 10%;
+   margin-bottom: 10%;
+}
+
+.flex2{
+
+  display: flex;
+ flex-wrap: wrap;
+ align-content:  center;
+ gap: 30px;
+ line-height: 1px;
+ justify-content: center;
+}

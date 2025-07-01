@@ -1,7 +1,10 @@
 import React, { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { shopContext } from '../context/ShopContext';
-import ProductDisplay from '../components/ProductDisplay/ProductDisplay';
+import Laptop from '../components/Laptop/Laptop';
+import ShopCategory from './ShopCategory';
+import RelatedProducts from '../components/RelatedProducts/RelatedProducts';
+
 
 const PageOfItem =()=> {
   const { all_product } = useContext(shopContext);
@@ -14,9 +17,14 @@ const PageOfItem =()=> {
   return (
    
     <div>
-      <ProductDisplay product={product}/>
+      
+      <Laptop product={product}/>
+      <RelatedProducts product={product}/>
     </div>
+   
+    
   );}
+ 
 }
 
 export default PageOfItem;

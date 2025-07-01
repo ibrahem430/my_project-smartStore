@@ -10,7 +10,7 @@ function Navbar() {
       <div className="header2">
         <div className="List">
           <div>
-            <p className="logo">TechSmart</p> 
+           <Link style={{textDecoration:"none"}} to="/" ><p onClick={() => setActiveNav("shop")} className="logo">TechSmart</p> </Link>  
           </div>
           
           <div>
