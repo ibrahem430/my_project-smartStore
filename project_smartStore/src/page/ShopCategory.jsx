@@ -1,19 +1,26 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { shopContext } from '../context/ShopContext';
 import Card from './Card';
 import "./Css/Shopcategory.css"
 
 function ShopCategory(props) {
-  const { all_product } = useContext(shopContext); // <-- correct spelling here
+  const [data, setData] = useState([]);
 
+      useEffect(() => {
+        fetch("http://localhost:5000/product")
+          .then((res) => res.json())
+          .then((data) => setData(data))
+          .catch((err) => console.error(err));
+      }, []);
   return (
+   
     <div >
       <div className='the-header-of-page'>
         <img src={props.banner} alt="" />
       </div>
       <div className='thecover-of-card'>
     <div className='flex'>
-      {all_product.map((item, i) => {
+      {data.map((item, i) => {
         if (props.category === item.category) {
           return (
 
@@ -21,7 +28,7 @@ function ShopCategory(props) {
         key={item.id}
         id={item.id}
         name={item.name}
-       new_price={item.new_price}
+         price={item.new_price}
         image={item.image}  
       />
           );

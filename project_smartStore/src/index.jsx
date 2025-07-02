@@ -4,7 +4,7 @@ import App from "./App";
 import ShopContextProvider from "./context/ShopContext";
 
 ReactDOM.render(
-  <ShopContextProvider><App/></ShopContextProvider>
- ,
+  <ShopContextProvider> <App/></ShopContextProvider>
+,
   document.getElementById("root")
 );

@@ -32,27 +32,27 @@ const Laptop=(props) =>{
 
        <div></div>
        <div className='the-name-of-specifications'><h3>Processor Specifications</h3></div> 
-       <div className='the-part-of-specification '><h3>Processor Generation: {product.ProcessorGeneration}</h3><hr  /></div>
-       <div className='the-part-of-specification '><h3>Processor Family :{product.ProcessorFamily}</h3> <hr /></div>
-       <div className='the-part-of-specification '><h3>Processor Speed :{product.ProcessorSpeed} </h3> <hr /></div>
-       <div className='the-part-of-specification '><h3>Processor Cache: {product.ProcessorCache}</h3> <hr /></div>
-       <div className='the-part-of-specification '><h3>Number Of Cores: {product.NumberOfCores} </h3> </div>
+       <div className='the-part-of-specification '><h3>Processor Generation: {product.processorgeneration}</h3><hr  /></div>
+       <div className='the-part-of-specification '><h3>Processor Family :{product.processorfamily}</h3> <hr /></div>
+       <div className='the-part-of-specification '><h3>Processor Speed :{product.processorspeed} </h3> <hr /></div>
+       <div className='the-part-of-specification '><h3>Processor Cache: {product.processorcache}</h3> <hr /></div>
+       <div className='the-part-of-specification '><h3>Number Of Cores: {product.numberofcores} </h3> </div>
        <div className='the-name-of-specifications'><h3>Memory</h3></div>
-      <div className='the-part-of-specification '><h3>RAM Capacity: {product.RAMCapacity} </h3></div>
+      <div className='the-part-of-specification '><h3>RAM Capacity: {product.ramcapacity} </h3></div>
            <div className='the-name-of-specifications'><h3>Storage</h3></div>
-       <div className='the-part-of-specification '><h3>Memory Type: {product.MemoryType} </h3><hr /> </div>
-       <div className='the-part-of-specification '><h3> Storage Capacity: {product. StorageCapacity} </h3><hr /> </div>
-       <div className='the-part-of-specification '><h3>Storage Type: {product.StorageType} </h3> </div>
+       <div className='the-part-of-specification '><h3>Memory Type: {product.memorytype} </h3><hr /> </div>
+       <div className='the-part-of-specification '><h3> Storage Capacity: {product. storagecapacity} </h3><hr /> </div>
+       <div className='the-part-of-specification '><h3>Storage Type: {product.storagetype} </h3> </div>
        <div className='the-name-of-specifications'><h3>Graphic Card</h3></div>
-       <div className='the-part-of-specification '><h3>Graphic Manu facturer: {product.GraphicManufacturer} </h3><hr /> </div>
-       <div className='the-part-of-specification '><h3>Graphic Model: {product.GraphicModel} </h3><hr /> </div>
-       <div className='the-part-of-specification '><h3>Graphic Memory: {product.GraphicMemory} </h3><hr /> </div>
-       <div className='the-part-of-specification '><h3>Graphic Memory Type: {product.GraphicMemoryType} </h3> </div>
+       <div className='the-part-of-specification '><h3>Graphic Manu facturer: {product.graphicmanufacturer} </h3><hr /> </div>
+       <div className='the-part-of-specification '><h3>Graphic Model: {product.graphicmodel} </h3><hr /> </div>
+       <div className='the-part-of-specification '><h3>Graphic Memory: {product.graphicmemory} </h3><hr /> </div>
+       <div className='the-part-of-specification '><h3>Graphic Memory Type: {product.graphicmemorytype} </h3> </div>
        <div className='the-name-of-specifications'><h3>Display Specifications</h3></div>
-       <div className='the-part-of-specification '><h3> Display Size: {product.DisplaySize} </h3><hr /> </div>
-       <div className='the-part-of-specification '><h3>Display Resolution: {product.DisplayResolution} </h3></div>
+       <div className='the-part-of-specification '><h3> Display Size: {product.displaysize} </h3><hr /> </div>
+       <div className='the-part-of-specification '><h3>Display Resolution: {product.displayresolution} </h3></div>
        <div className='the-name-of-specifications'><h3>Inputs & Outputs</h3></div>
-       <div className='the-part-of-specification '><h3>Keyboard: {product.Keyboard} </h3><hr /> </div>
+       <div className='the-part-of-specification '><h3>Keyboard: {product.keyboard} </h3><hr /> </div>
 
       
 
