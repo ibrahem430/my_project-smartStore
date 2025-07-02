@@ -2,6 +2,14 @@ import express from "express";
 import bodyParser from "body-parser";
 import pg from "pg";
 import cors from "cors";
+import path from "path"
+
+import { fileURLToPath } from 'url';
+
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 
 const app = express();
 const port = 5000;
@@ -19,7 +27,10 @@ db.connect();
 app.use(cors()); // <--- You forgot this
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json()); // Good practice if you want to handle JSON too
-app.use(express.static("public")); // This serves /public/images
+
+
+app.use("/image", express.static(path.join(__dirname, "image")));
+
 
 app.get("/product", (req, res) => {
   const sql = "SELECT * FROM product";

@@ -9,7 +9,7 @@ const Laptop=(props) =>{
     <div className='thepage33'>
         <h1>{product.name.split(" ")[1]} Laptop</h1>
       <div className='the-cover-of-img-and-name-and-price' >
-        <div className='img-cover'><img src={product.image} alt="" /></div>
+        <div className='img-cover'><img src={`http://localhost:5000/image/${product.image}`} alt="" /></div>
         <div className='cover-of-name-price' >
           <h2 style={{marginLeft:"10%"}}>Type of laptop: {product.name.split(" ")[1]}</h2>       
           <h2 className='the-name-of-product' >{product.name}</h2>

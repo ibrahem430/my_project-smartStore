@@ -18,7 +18,6 @@ const PageOfItem = () => {
       .catch((err) => console.error("Fetch error:", err));
   }, [productId]);
 
-  // Find the product by ID
   const product = data.find((item) => item.id === Number(productId));
 
   // Loading state
@@ -36,7 +35,6 @@ const PageOfItem = () => {
     );
   }
 
-  // If category not supported
   return (
     <div>
       <h2>No template for category: {product.category}</h2>

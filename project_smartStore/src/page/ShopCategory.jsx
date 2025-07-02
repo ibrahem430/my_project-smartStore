@@ -29,7 +29,7 @@ function ShopCategory(props) {
         id={item.id}
         name={item.name}
          price={item.new_price}
-        image={item.image}  
+        image={`http://localhost:5000/image/${item.image}`} 
       />
           );
         } else {
