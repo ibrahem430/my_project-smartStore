@@ -4,6 +4,7 @@ import pg from "pg";
 import cors from "cors";
 import path from "path"
 
+
 import { fileURLToPath } from 'url';
 
 
@@ -34,6 +35,14 @@ app.use("/image", express.static(path.join(__dirname, "image")));
 
 app.get("/product", (req, res) => {
   const sql = "SELECT * FROM product";
+  db.query(sql, (err, result) => {
+    if (err) return res.status(500).json(err);
+    return res.json(result.rows); // PostgreSQL stores results in rows
+  });
+});
+
+app.get("/advertisements", (req, res) => {
+  const sql = "SELECT * FROM advertisements";
   db.query(sql, (err, result) => {
     if (err) return res.status(500).json(err);
     return res.json(result.rows); // PostgreSQL stores results in rows

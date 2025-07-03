@@ -16,7 +16,7 @@ function ShopCategory(props) {
    
     <div >
       <div className='the-header-of-page'>
-        <img src={props.banner} alt="" />
+        <img src={props.banner} alt="image" />
       </div>
       <div className='thecover-of-card'>
     <div className='flex'>

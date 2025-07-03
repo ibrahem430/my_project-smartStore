@@ -24,7 +24,7 @@ function Hero() {
   return (
     <div style={{}} >
     <div className='hero'>
-       <h1 style={{textAlign:'center', marginBottom:"5%" ,color:"rgb(63, 60, 60)"}}>The Products</h1>
+       <h1 style={{textAlign:'center', marginBottom:"5%" ,color:"rgb(0, 0, 0)", fontSize:"40px"}}>The Products</h1>
         <div className="hero-prodect">
             
             <div className='size-prodect'>
@@ -53,7 +53,7 @@ function Hero() {
            </div>
            <div className='size-prodect'>
              <Link to="/monitor"><img className='theSizeOfPhoto' src={monitorImg} alt="" /></Link>
-            <Link to="/monitor" ><h2 className='thetext'>monitors</h2></Link> 
+            <Link to="/monitor" ><h2 className='thetext'>Monitors</h2></Link> 
            </div>
            <div className='size-prodect'>
             <Link to="/charges"> <img className='theSizeOfPhoto' src={chargeImg} alt="" /></Link>

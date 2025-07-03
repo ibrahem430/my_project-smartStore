@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Laptop from '../components/Laptop/Laptop';
 import RelatedProducts from '../components/RelatedProducts/RelatedProducts';
+import Pc_gaming from '../components/Pc_gaming/Pc_gaming';
+import Pc from '../components/Pc/Pc';
+import Keyboard from "../components/Keyboard/Keyboard"
 
 const PageOfItem = () => {
   const [data, setData] = useState([]);
@@ -30,6 +33,38 @@ const PageOfItem = () => {
     return (
       <div>
         <Laptop product={product} />
+        <RelatedProducts product={product} />
+      </div>
+    );
+  }
+  if(product.category==="Laptop_gaming"){
+  return (
+      <div>
+        <Laptop product={product} />
+        <RelatedProducts product={product} />
+      </div>
+    );
+  }
+    if(product.category==="pcs_gaming"){
+  return (
+      <div>
+        <Pc_gaming product={product} />
+        <RelatedProducts product={product} />
+      </div>
+    );
+  }
+   if(product.category==="pcs"){
+  return (
+      <div>
+        <Pc product={product} />
+        <RelatedProducts product={product} />
+      </div>
+    );
+  }
+  if(product.category==="keyboard" ||product.category==="mouse"){
+  return (
+      <div>
+        <Keyboard product={product} />
         <RelatedProducts product={product} />
       </div>
     );
