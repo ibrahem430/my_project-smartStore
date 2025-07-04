@@ -4,6 +4,20 @@
    margin-right: 10%;
 }
 
+.sort{
+  display: flex;
+justify-self: end;
+  border-radius: 75px;
+  background-color: #f1efef;
+  width: 100px;
+ justify-content: center;
+ padding: 8px;
+border: 1px black solid;
+}
+.sort img
+{
+  align-self: center;
+}
 .flex{
 
   display: flex;

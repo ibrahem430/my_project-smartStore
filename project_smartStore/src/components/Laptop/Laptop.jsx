@@ -39,8 +39,9 @@ const Laptop=(props) =>{
        <div className='the-part-of-specification '><h3>Number Of Cores: {product.numberofcores} </h3> </div>
        <div className='the-name-of-specifications'><h3>Memory</h3></div>
       <div className='the-part-of-specification '><h3>RAM Capacity: {product.ramcapacity} </h3></div>
+             <div className='the-part-of-specification '><h3>Memory Type: {product.memorytype} </h3> </div>
+
            <div className='the-name-of-specifications'><h3>Storage</h3></div>
-       <div className='the-part-of-specification '><h3>Memory Type: {product.memorytype} </h3><hr /> </div>
        <div className='the-part-of-specification '><h3> Storage Capacity: {product. storagecapacity} </h3><hr /> </div>
        <div className='the-part-of-specification '><h3>Storage Type: {product.storagetype} </h3> </div>
        <div className='the-name-of-specifications'><h3>Graphic Card</h3></div>

@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
           <img className="size_photo" src={props.image} alt={props.name} /></div>
 <div className='cover-of-text'>
   <Link className='link-of-item' to={`/pageOfitem/${props.id}`}>
-    <h3 onClick={()=>window.scrollTo(0,0)} className="text_algin">{props.name.substring(0, 90)}</h3>
+    <h3 onClick={()=>window.scrollTo(0,0)} className="text_algin">{props.name.substring(0, 60)}</h3>
   </Link>
 </div>
           <h3 className='price' >${props.price}</h3>

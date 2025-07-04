@@ -1,0 +1,54 @@
+.thePage{
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+        background-color: rgb(243, 241, 241);
+
+}
+.the-cover-of-all-item{
+    padding-top: 30px;
+    padding-bottom: 30px;
+   width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    gap: 15px;
+    background-color: rgb(255, 255, 255);
+   
+}
+.the-cover-of-all-item input{
+    padding: 18px;
+    width: 400px;
+}
+.the-cover-of-all-item button{
+    padding: 16px;
+    width: 440px;
+}
+.the-cover-of-all-item button:hover{
+background-color: black;
+color: white;
+}
+.thelogin{
+   text-align: start;
+   width: 80%;
+   margin-top: 0px;
+}
+.thelogin span{
+    color: #ff0000;
+}
+.the-agree-policy{
+   display: flex;
+   align-items: center;
+    gap: 20px;
+   font-size: 18px;
+   
+}
+.the-agree-policy input{
+    margin: 0px;
+    width: 10px;
+}
+/* .the-agree-policy input{
+    padding: 2px;
+} */

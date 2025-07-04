@@ -31,7 +31,7 @@ const Keyboard=(props) =>{
 
 
        <div></div>
-       <div className='the-part-of-specification '><h3><hr /> Type: {product.processorgeneration}</h3><hr  /></div>
+       <div className='the-part-of-specification '><h3><hr /> Type: {product.type}</h3><hr  /></div>
 
     </div>
   </div>
