@@ -9,49 +9,69 @@ const thestyle={
     justifyContent: "center",
     alignItems: "center",
     gap: "60px" ,
-      marginTop:"5%" 
+      marginTop:"5%" ,
+     
     
 }
 const thePage={
-    marginLeft:"20%",
-    marginRight:"20%" ,
-     marginTop:"10%" 
+     display: "flex",
+   
+    justifyContent: "center",
+    alignItems: "center", 
+    marginBottom:"5%"
+}
+const the_contact_details={
+  fontSize:"27px",
+  textAlign:"center" ,
+  marginTop:"5%"
+}
+const ollpage={
+  width:"60%",
+  marginLeft:"20%",
+     border: "3px black solid"
+
 }
 
 
-
 function Contact() {
-  return (<div>
-         <div style={thePage}>
-            <h1 style={{ textAlign:"center"}}>Contact us</h1>
-    <div style={thestyle}>
-        <div><img style={{height:"120px" ,width:"120px"}} src={facebook} alt="" />
+  return (<div style={ollpage}>    
+       
+  <h1 style={the_contact_details}><span style={{fontSize:"40px" }} >Contact Details</span>
+    <br /><br />
+<br/>
+Working Time:
+<br></br> <br></br>
+<span style={{color:"red"}}>
+Saturday - Wednesday : 8:00 AM - 6:30 PM
+<br></br>
+Friday: Closed
+</span>
+<br/><br/>
+WhatsApp:<br/><br/>
+<span style={{color:"red"}}>0782227059</span> 
+<br/><br />
+Email:
+<br/><br/>
+ <span style={{color:"red"}}>sales@tecksmart.Jo</span></h1>
+        
+<br/>
+<h1 style={{ textAlign:"center" , fontSize:"40px" }}>Contact us</h1> 
+  <div style={thePage }>  
+      
+    <div style={thestyle}>                                            
+
+        <div><img style={{height:"110px" ,width:"110px"}} src={facebook} alt="" />
         <h2 style={{textAlign:"center"}}>Facebook</h2>
         </div>
-        <div><img style={{height:"120px" ,width:"120px"}} src={instgram} alt="" />
+        <div><img style={{height:"110px" ,width:"110px"}} src={instgram} alt="" />
         <h2 style={{textAlign:"center"}}>Instagram</h2>
         </div>
-        <div><img style={{height:"120px" ,width:"150px", borderRadius:"50%"}} src={x} alt="" />
+        <div><img style={{height:"100px" ,width:"130px", borderRadius:"50%"}} src={x} alt="" />
         <h2 style={{textAlign:"center"}}>x</h2>
         </div>
+      
+  
     </div></div>
-
-    <div><p><span style={{}}>Contact Details</span>
-Address:
-
-City Center for Computers Wasfi Al-Tal Streen ( Gardenz ), PizzaHut Building #28 Amman , Jordan
-
-Working Time:
-
-Saturday - Wednesday : 8:00 AM - 6:30 PM
-Thursday : Holiday (رأس السنة الهجرية)
-Friday: Closed
-
-Telephone: 06-5626110 - 06-5626111 - 06-5626114
-
-WhatsApp: 0796802525
-
-Email: sales@citycenter.Jo</p></div>
     </div>
   )
 }

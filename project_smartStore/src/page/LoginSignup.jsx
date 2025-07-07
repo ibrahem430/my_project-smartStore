@@ -1,7 +1,9 @@
 import React from 'react'
 import "./Css/LoginSignup.css"
 function LoginSignup() {
-  return (
+ 
+
+     return (
     <div className='thePage'>
       <div className='the-cover-of-all-item'>
       <input type="text"  placeholder='Your Name'/>

@@ -1,39 +1,40 @@
-import React, { useState ,useEffect} from 'react'
-import all_product from '../Assets/all_product'
-import Card from '../../page/Card'
-import "./RelatedProducts.css"
+import React, { useState, useEffect } from 'react';
+import Card from '../../page/Card';
+import "./RelatedProducts.css";
 
 function RelatedProducts({ product }) {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    // Scroll to top when product changes
     window.scrollTo(0, 0);
-
-    // Fetch product data
     fetch("http://localhost:5000/product")
       .then((res) => res.json())
       .then((data) => setData(data))
       .catch((err) => console.error("Fetch error:", err));
-  }, [product]); 
+  }, [product]);
 
   return (
     <div className='thecover-of-card2'>
-    <div className='flex2'>
-       {data.map((item,i)=>{
-        if(item.name.split(" ")[1] ===product.name.split(" ")[1]&&item.id!==product.id)
-        return (  
-         <Card
-        key={item.id}
-        id={item.id}
-        name={item.name}
-       price={item.new_price}
-        image={`http://localhost:5000/image/${item.image}`} 
-      />) 
-       })}
+      <h2 className="related-title">Related Products</h2>
+      <div className='flex2'>
+        {data.map((item) => {
+          if (item.type === product.type && item.id !== product.id) {
+            return (
+              <Card
+                key={item.id}
+                id={item.id}
+                name={item.name}
+                price={item.new_price}
+                image={`http://localhost:5000/image/${item.image}`}
+              />
+            );
+          } else {
+            return null;
+          }
+        })}
+      </div>
     </div>
-    </div>
-  )
+  );
 }
 
-export default  RelatedProducts
+export default RelatedProducts;

@@ -1,16 +1,16 @@
-import React, { createContext } from "react";
-import all_product from "../components/Assets/all_product";
+// // src/App.jsx or main entry component
 
-export const shopContext = createContext(null);
+// import React from "react";
+// import ShopContextProvider from "./context/ShopContext";
+// import ShopCategory from "./components/ShopCategory";
 
-const ShopContextProvider = (props) => {
-  const contextValue = { all_product };
+// function App() {
+//   return (
+//     <ShopContextProvider>
+//       <ShopCategory />
+//     </ShopContextProvider>
+//   );
+// }
 
-  return (
-    <shopContext.Provider value={contextValue}>
-      {props.children}
-    </shopContext.Provider>
-  );
-};
+// export default App;
 
-export default ShopContextProvider;

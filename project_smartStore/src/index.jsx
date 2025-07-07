@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import ShopContextProvider from "./context/ShopContext";
+// import ShopContextProvider from "./context/ShopContext";
 
 ReactDOM.render(
-  <ShopContextProvider> <App/></ShopContextProvider>
-,
+  // <ShopContextProvider>></ShopContextProvider>
+ <App/ >,
   document.getElementById("root")
 );
