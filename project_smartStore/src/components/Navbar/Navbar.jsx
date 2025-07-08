@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import "./Navbar.css";
-
+import { count } from '../../page/Card';
 function Navbar() {
   const [activeNav, setActiveNav] = useState("");
 
@@ -47,7 +47,7 @@ function Navbar() {
             src="https://www.freeiconspng.com/uploads/cart-icon-16.png" 
             alt="Shopping Cart" 
           />
-          <div className="nav-cart-count">0</div>
+          <div className="nav-cart-count">{count}</div>
         </Link>
       </div>
     </div>

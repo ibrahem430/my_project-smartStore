@@ -1,17 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "./Prodect.css";
-import { Link } from 'react-router-dom';
-// import { addToCart } from './ShopCategory'; // ✅ import function
-
-// const userId = 1; // temporary user (should come from auth or localStorage later)
-
+import { Link, useNavigate } from 'react-router-dom';
+let count=0;
 function Card(props) {
-  // const handleAddToCart = () => {
-  //   addToCart(userId, props.id, 1)
-  //     .then(() => {
-  //       alert(`${props.name} added to cart`);
-  //     });
-  // };
+  const navigate = useNavigate();
+  const handleAdd = () => {
+     count++;
+    const userId = 1;
+    fetch('http://localhost:5000/add-to-cart',{
+      method:'POST',
+            headers: { 'Content-Type': 'application/json' },
+
+      body: JSON.stringify({
+        user_id: userId,
+        product_id: props.id,
+        quantity: 1,
+        name_product: props.name,
+        price : props.price
+      }),
+    })
+    .then((res)=>res.text())
+    .then((data)=>{
+      alert(`${props.name}`)
+      navigate('/cart')
+      
+    })
+    .catch((err)=>{
+      alert(`error`)
+    })
+  
+  };
 
   return (
     <div className="theCrde" style={{ margin: "0px" }}>
@@ -35,10 +53,33 @@ function Card(props) {
       <h3 className='price'>${props.price}</h3>
 
       <div className='thebutton'>
-        <button className="click" >Add to Cart</button>
+        <button className="click" onClick={handleAdd}>Add to Cart</button>
       </div>
     </div>
   );
 }
 
 export default Card;
+export {count}
+
+// const userId = 1;
+//     fetch('http://localhost:5000/add-to-cart', {
+//       method: 'POST',
+//       headers: { 'Content-Type': 'application/json' },
+//       body: JSON.stringify({
+//         user_id: userId,
+//         product_id: props.id,
+//         quantity: 1,
+//         name_product: props.name,
+//       }),
+//     })
+//       .then((res) => res.text())
+//       .then((data) => {
+//         alert(`${props.name} added to cart`);
+//         console.log(data);
+//         navigate('/cart'); 
+//       })
+//       .catch((err) => {
+//         console.error(err);
+//         alert('Error adding to cart');
+//       });

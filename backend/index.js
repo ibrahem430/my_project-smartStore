@@ -40,6 +40,13 @@ app.get("/product", (req, res) => {
     return res.json(result.rows); // PostgreSQL stores results in rows
   });
 });
+app.get("/getTheProduct",(req,res)=>{
+  const sql="SELECT * FROM cart";
+  db.query(sql,(err,result)=>{
+    if (err) return res.status(500).json(err);
+    return res.json(result.rows);
+  })
+})
 
 app.get("/advertisements", (req, res) => {
   const sql = "SELECT * FROM advertisements";
@@ -53,79 +60,32 @@ app.get("/",(req,res)=>{
 })
 
 
-app.post("/api/cart/add", async (req, res) => {
-  const { userId, productId, quantity } = req.body;
+app.post('/add-to-cart', async (req, res) => {
+  const { user_id, product_id, quantity, name_product, price } = req.body;
 
   try {
-    const existing = await pool.query(
-      "SELECT * FROM cart WHERE user_id = $1 AND product_id = $2",
-      [userId, productId]
+    await db.query(
+      `INSERT INTO cart (user_id, product_id, quantity, name_product, price) VALUES ($1, $2, $3, $4, $5)`,
+      [user_id, product_id, quantity, name_product, price]
     );
-
-    if (existing.rows.length > 0) {
-      await pool.query(
-        "UPDATE cart SET quantity = quantity + $1 WHERE user_id = $2 AND product_id = $3",
-        [quantity, userId, productId]
-      );
-    } else {
-      await pool.query(
-        "INSERT INTO cart (user_id, product_id, quantity) VALUES ($1, $2, $3)",
-        [userId, productId, quantity]
-      );
-    }
-
-    res.json({ message: "Item added to cart" });
+    res.status(200).send("Item added to cart");
   } catch (err) {
     console.error(err);
-    res.status(500).json({ error: "Add to cart failed" });
+    res.status(500).send("Error adding to cart");
   }
 });
 
-// ✅ Get cart by user
-app.get("/api/cart/:userId", async (req, res) => {
-  const userId = req.params.userId;
+app.delete("/delete-product/:id", async (req, res) => {
+  const { id } = req.params;
 
   try {
-    const result = await pool.query(
-      `SELECT c.id, c.product_id, c.quantity, p.name, p.new_price AS price, p.image
-       FROM cart c
-       JOIN product p ON c.product_id = p.id
-       WHERE c.user_id = $1`,
-      [userId]
-    );
-    res.json(result.rows);
+    await db.query("DELETE FROM cart WHERE id = $1", [id]);
+    res.send("Deleted successfully");
   } catch (err) {
-    res.status(500).json({ error: "Fetch cart failed" });
+    console.error(err);
+    res.status(500).send("Failed to delete");
   }
 });
-
-// ✅ Remove item
-app.delete("/api/cart/remove", async (req, res) => {
-  const { userId, productId } = req.body;
-
-  try {
-    await pool.query(
-      "DELETE FROM cart WHERE user_id = $1 AND product_id = $2",
-      [userId, productId]
-    );
-    res.json({ message: "Item removed" });
-  } catch (err) {
-    res.status(500).json({ error: "Remove failed" });
-  }
-});
-
-// ✅ Clear cart
-app.post("/api/cart/clear", async (req, res) => {
-  const { userId } = req.body;
-
-  try {
-    await pool.query("DELETE FROM cart WHERE user_id = $1", [userId]);
-    res.json({ message: "Cart cleared" });
-  } catch (err) {
-    res.status(500).json({ error: "Clear failed" });
-  }
-});
-
 
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);

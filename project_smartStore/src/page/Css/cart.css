@@ -1,0 +1,17 @@
+.thecart {
+   border: 5px rgb(255, 255, 255) solid;
+   width: 70%;
+   margin-left: 15%;
+}
+.thecart h1{
+    text-align: center;
+}
+.thecart table thead tr td{
+    background-color: rgb(207, 207, 207);
+    
+}
+
+
+.thecart table tbody tr td {
+  text-align: center;
+}

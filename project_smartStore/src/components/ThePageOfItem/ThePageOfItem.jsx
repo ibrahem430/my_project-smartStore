@@ -1,5 +1,5 @@
 import React from 'react'
-import "./thePageOfItem.css"
+import "./ThePageOfItem.css"
 const ThePageOfItem=(props) =>{
   
     const {product}=props;
