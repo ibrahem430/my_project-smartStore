@@ -16,8 +16,8 @@ function Footer() {
         <li>Company</li>
         <li>Products</li>
         <li>Offices </li>
-        <li>About</li>
-        <li>Contact</li>
+       <Link style={{textDecoration:"none" , color:"white"}} to="/about" onClick={() => window.scrollTo(0, 0)} ><li>About</li></Link> 
+       <Link style={{textDecoration:"none" , color:"white"}} to="/contact" onClick={() => window.scrollTo(0, 0)} ><li>Contact</li></Link> 
        </ul>
        <div className='theIMgFlex'>
         <img className='theImg2-footer' src={facebook} alt="facebook" />

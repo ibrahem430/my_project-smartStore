@@ -1,34 +1,69 @@
-import React, { useState } from 'react';
-import "./Prodect.css";
+import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-let count=0;
+import "./Prodect.css";
+
 function Card(props) {
   const navigate = useNavigate();
-  const handleAdd = () => {
-     count++;
-    const userId = 1;
-    fetch('http://localhost:5000/add-to-cart',{
-      method:'POST',
-            headers: { 'Content-Type': 'application/json' },
+  const userId = 1;
 
-      body: JSON.stringify({
-        user_id: userId,
-        product_id: props.id,
-        quantity: 1,
-        name_product: props.name,
-        price : props.price
-      }),
-    })
-    .then((res)=>res.text())
-    .then((data)=>{
-      alert(`${props.name}`)
-      navigate('/cart')
-      
-    })
-    .catch((err)=>{
-      alert(`error`)
-    })
-  
+  const [data, setData] = useState([]);
+
+  // ✅ Fetch cart data on mount
+  useEffect(() => {
+    fetch('http://localhost:5000/getTheProduct')
+      .then((res) => res.json())
+      .then((data) => setData(data))
+      .catch((err) => console.error("Fetch error:", err));
+  }, []);
+
+  const handleAdd = () => {
+    const found = data.find(item => item.product_id === props.id);
+
+    if (!found) {
+      // 🟢 Product not in cart → Add it
+      fetch('http://localhost:5000/add-to-cart', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          user_id: userId,
+          product_id: props.id,
+          quantity: 1,
+          name_product: props.name,
+          price: props.price
+        }),
+      })
+        .then((res) => res.text())
+        .then((data) => {
+          alert(`${props.name} added to cart`);
+          navigate('/cart');
+          window.location.reload(); // optional
+        })
+        .catch((err) => {
+          alert(`Add error`);
+          console.error(err);
+        });
+    } else {
+     
+      fetch('http://localhost:5000/update-cart', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          user_id: userId,
+          product_id: props.id,
+          quantity: found.quantity + 1,
+        }),
+      })
+        .then((res) => res.text())
+        .then((data) => {
+          alert(`Quantity updated`);
+          navigate('/cart');
+          window.location.reload(); // optional
+        })
+        .catch((err) => {
+          alert(`Update error`);
+          console.error(err);
+        });
+    }
   };
 
   return (
@@ -60,26 +95,3 @@ function Card(props) {
 }
 
 export default Card;
-export {count}
-
-// const userId = 1;
-//     fetch('http://localhost:5000/add-to-cart', {
-//       method: 'POST',
-//       headers: { 'Content-Type': 'application/json' },
-//       body: JSON.stringify({
-//         user_id: userId,
-//         product_id: props.id,
-//         quantity: 1,
-//         name_product: props.name,
-//       }),
-//     })
-//       .then((res) => res.text())
-//       .then((data) => {
-//         alert(`${props.name} added to cart`);
-//         console.log(data);
-//         navigate('/cart'); 
-//       })
-//       .catch((err) => {
-//         console.error(err);
-//         alert('Error adding to cart');
-//       });

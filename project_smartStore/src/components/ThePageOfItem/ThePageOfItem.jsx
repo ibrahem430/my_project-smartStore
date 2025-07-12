@@ -1,8 +1,63 @@
-import React from 'react'
-import "./ThePageOfItem.css"
-const ThePageOfItem=(props) =>{
-  
-    const {product}=props;
+import React, { useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import "./ThePageOfItem.css";
+
+function ThePageOfItem(props) {
+     const {product}=props;
+  const navigate = useNavigate();
+  const userId = 1;
+
+  const [data, setData] = useState([]);
+  const handleAdd = () => {
+    const found = data.find(item => item.product_id === product.id);
+
+    if (!found) {
+      // 🟢 Product not in cart → Add it
+      fetch('http://localhost:5000/add-to-cart', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          user_id: userId,
+          product_id: product.id,
+          quantity: 1,
+          name_product: product.name,
+          price: product.price
+        }),
+      })
+        .then((res) => res.text())
+        .then((data) => {
+          alert(`${product.name} added to cart`);
+          navigate('/cart');
+          window.location.reload(); // optional
+        })
+        .catch((err) => {
+          alert(`Add error`);
+          console.error(err);
+        });
+    } else {
+     
+      fetch('http://localhost:5000/update-cart', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          user_id: userId,
+          product_id: product.id,
+          quantity: found.quantity + 1,
+        }),
+      })
+        .then((res) => res.text())
+        .then((data) => {
+          alert(`Quantity updated`);
+          navigate('/cart');
+          window.location.reload(); // optional
+        })
+        .catch((err) => {
+          alert(`Update error`);
+          console.error(err);
+        });
+    }
+  };
+ 
     return (
       <div >
         <h3 style={{color:" rgb(86, 86, 86)"}}>Home/Shop/{product.category}/{product.name.substring(7,30)}</h3>
@@ -17,7 +72,7 @@ const ThePageOfItem=(props) =>{
           <h2 className='the-price-of-product'>JOD {product.old_price}</h2>
           <h1>JOD {product.new_price}</h1>
          <div className='the-img-of-veza'><img src="https://gts.jo/image/catalog/gts_theme/gts-payment-options.png" alt="" /></div> 
-        <div> <button className='click2'>Add TO Cart</button> </div>
+        <div> <button className='click2'onClick={handleAdd} >Add TO Cart</button> </div>
         <button className='whatsapp'><img style={{height:"20px" }} src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1022px-WhatsApp.svg.png" alt="" /> Chat With Us In WhatsApp</button>
         </div>
       </div>

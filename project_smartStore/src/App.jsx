@@ -35,17 +35,17 @@ import ShopGaming from "./components/ShopGaming/ShopGaming";
 
 function App() {
  
-  
+ const [count ,setCount]=useState(0);
 
   return (<div>
 
       <BrowserRouter>
-<Navbar/>
+<Navbar />
 
 <Routes>
   <Route path="/" element={<Shop />} />
   <Route path="/about" element={<About />} />
-  <Route path="/cart" element={<Cart />} />
+  <Route path="/cart" element={<Cart  />} />
   <Route path="/login" element={<LoginSignup />} />
   <Route path="/register" element={<LoginSignup />} />
   <Route path="/contact" element={<Contact />} />
