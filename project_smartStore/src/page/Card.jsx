@@ -4,23 +4,28 @@ import "./Prodect.css";
 
 function Card(props) {
   const navigate = useNavigate();
-  const userId = 1;
+  const userId = localStorage.getItem('userId');  // user ID from localStorage
 
   const [data, setData] = useState([]);
 
-  // ✅ Fetch cart data on mount
   useEffect(() => {
-    fetch('http://localhost:5000/getTheProduct')
+    if (!userId) return;
+    fetch(`http://localhost:5000/getTheProduct/${userId}`)
       .then((res) => res.json())
       .then((data) => setData(data))
       .catch((err) => console.error("Fetch error:", err));
-  }, []);
+  }, [userId]);
 
   const handleAdd = () => {
+    if (!userId) {
+      alert("Please login first!");
+      navigate('/login');
+      return;
+    }
+
     const found = data.find(item => item.product_id === props.id);
 
     if (!found) {
-      // 🟢 Product not in cart → Add it
       fetch('http://localhost:5000/add-to-cart', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -33,7 +38,7 @@ function Card(props) {
         }),
       })
         .then((res) => res.text())
-        .then((data) => {
+        .then(() => {
           alert(`${props.name} added to cart`);
           navigate('/cart');
           window.location.reload(); // optional
@@ -43,7 +48,6 @@ function Card(props) {
           console.error(err);
         });
     } else {
-     
       fetch('http://localhost:5000/update-cart', {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
@@ -54,7 +58,7 @@ function Card(props) {
         }),
       })
         .then((res) => res.text())
-        .then((data) => {
+        .then(() => {
           alert(`Quantity updated`);
           navigate('/cart');
           window.location.reload(); // optional

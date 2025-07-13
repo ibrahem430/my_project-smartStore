@@ -2,16 +2,15 @@ import express from "express";
 import bodyParser from "body-parser";
 import pg from "pg";
 import cors from "cors";
-import path from "path"
+import path from "path";
 
+import { fileURLToPath } from "url";
 
-import { fileURLToPath } from 'url';
-import { count } from "console";
-
+import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-
 
 const app = express();
 const port = 5000;
@@ -26,44 +25,63 @@ const db = new pg.Client({
 
 db.connect();
 
-app.use(cors()); // <--- You forgot this
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.json()); // Good practice if you want to handle JSON too
-
+app.use(express.json());
 
 app.use("/image", express.static(path.join(__dirname, "image")));
 
+app.post('/register', async (req, res) => {
+  const { username, email, password } = req.body;
+  const hashedPassword = await bcrypt.hash(password, 10);
+  try {
+    const result = await db.query(
+      'INSERT INTO users (username, email, password) VALUES ($1, $2, $3) RETURNING *',
+      [username, email, hashedPassword]
+    );
+    res.status(200).json({ user: result.rows[0] });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Error registering user');
+  }
+});
+
+app.post('/login', async (req, res) => {
+  const { email, password } = req.body;
+  try {
+    const result = await db.query('SELECT * FROM users WHERE email = $1', [email]);
+    const user = result.rows[0];
+    if (!user) return res.status(400).send('User not found');
+    const match = await bcrypt.compare(password, user.password);
+    if (!match) return res.status(401).send('Incorrect password');
+    const token = jwt.sign({ id: user.id }, 'your_secret_key', { expiresIn: '1h' });
+    res.json({ token, userId: user.id });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Login error');
+  }
+});
 
 app.get("/product", (req, res) => {
   const sql = "SELECT * FROM product";
   db.query(sql, (err, result) => {
     if (err) return res.status(500).json(err);
-    return res.json(result.rows); // PostgreSQL stores results in rows
-  });
-});
-app.get("/getTheProduct",(req,res)=>{
-  const sql="SELECT * FROM cart";
-  db.query(sql,(err,result)=>{
-    if (err) return res.status(500).json(err);
     return res.json(result.rows);
-  })
-})
-
-app.get("/advertisements", (req, res) => {
-  const sql = "SELECT * FROM advertisements";
-  db.query(sql, (err, result) => {
-    if (err) return res.status(500).json(err);
-    return res.json(result.rows); // PostgreSQL stores results in rows
   });
 });
-app.get("/",(req,res)=>{
-  res.send("hello")
-})
 
+// Get cart items for user
+app.get('/getTheProduct/:userId', (req, res) => {
+  const userId = parseInt(req.params.userId);
+  db.query('SELECT * FROM cart WHERE user_id = $1', [userId], (err, result) => {
+    if (err) return res.status(500).json({ error: err });
+    res.json(result.rows);
+  });
+});
 
+// Add item to cart
 app.post('/add-to-cart', async (req, res) => {
   const { user_id, product_id, quantity, name_product, price } = req.body;
-
   try {
     await db.query(
       `INSERT INTO cart (user_id, product_id, quantity, name_product, price) VALUES ($1, $2, $3, $4, $5)`,
@@ -76,9 +94,9 @@ app.post('/add-to-cart', async (req, res) => {
   }
 });
 
+// Delete item from cart
 app.delete("/delete-product/:id", async (req, res) => {
   const { id } = req.params;
-
   try {
     await db.query("DELETE FROM cart WHERE id = $1", [id]);
     res.send("Deleted successfully");
@@ -88,50 +106,57 @@ app.delete("/delete-product/:id", async (req, res) => {
   }
 });
 
-
-app.get('/cart-count', async (req, res) => {
-try {
-    const userId = 1; 
-
+// Get total cart count (sum quantity) for user
+app.get('/cart-count/:userId', async (req, res) => {
+  try {
+    const userId = parseInt(req.params.userId);
     const result = await db.query(
       'SELECT SUM(quantity) AS total FROM cart WHERE user_id = $1',
       [userId]
     );
-
-    const total = result.rows[0].total || 0;
-    res.json({ count: result.rows[0].total||0 });
+    res.json({ count: result.rows[0].total || 0 });
   } catch (err) {
     console.error(err);
     res.status(500).send('Error fetching count');
   }
-
 });
-app.get('/price-count', async (req, res) => {
-try {
-    const userId = 1; 
 
+app.get('/cart-count/:userId', async (req, res) => {
+  try {
+    const userId = parseInt(req.params.userId);
     const result = await db.query(
       'SELECT SUM(price) AS total FROM cart WHERE user_id = $1',
       [userId]
     );
-
-    const total = result.rows[0].total || 0;
-    res.json({ count: result.rows[0].total||0 });
+    res.json({ count: result.rows[0].total || 0 });
   } catch (err) {
     console.error(err);
     res.status(500).send('Error fetching count');
   }
-
 });
+// Get total price sum for user
+app.get('/price-count/:userId', async (req, res) => {
+  try {
+    const userId = parseInt(req.params.userId);
+    const result = await db.query(
+      'SELECT SUM(price * quantity) AS total FROM cart WHERE user_id = $1',
+      [userId]
+    );
+    res.json({ count: result.rows[0].total || 0 });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Error fetching count');
+  }
+});
+
+// Update cart quantity for user and product
 app.put("/update-cart", async (req, res) => {
   const { user_id, product_id, quantity } = req.body;
-
   try {
     const result = await db.query(
       'UPDATE cart SET quantity = $1 WHERE user_id = $2 AND product_id = $3 RETURNING *',
       [quantity, user_id, product_id]
     );
-
     res.json({ updated: result.rows[0] });
   } catch (err) {
     console.error('Update error:', err);
@@ -139,7 +164,16 @@ app.put("/update-cart", async (req, res) => {
   }
 });
 
+app.get("/advertisements", (req, res) => {
+  const sql = "SELECT * FROM advertisements";
+  db.query(sql, (err, result) => {
+    if (err) return res.status(500).json(err);
+    return res.json(result.rows); // PostgreSQL stores results in rows
+  });
+});
 
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });
+
+
