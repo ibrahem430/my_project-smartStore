@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './Css/LoginSignup.css';
 
 function LoginSignup() {
-  const [isLogin, setIsLogin] = useState(true); // toggle between login/register
+  const [isLogin, setIsLogin] = useState(true); 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -25,7 +25,7 @@ function LoginSignup() {
         if (data.userId || data.user?.id) {
           localStorage.setItem('userId', data.userId || data.user.id);
           alert(isLogin ? 'Login successful' : 'Registration successful');
-          navigate('/cart'); // or "/"
+          navigate('/'); // or "/"
         } else {
           alert('Failed: ' + (data.message || 'Unknown error'));
         }

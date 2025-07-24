@@ -1,0 +1,10 @@
+.name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    width: 90%;
+}
+h1{
+    font-size: 100px;
+}

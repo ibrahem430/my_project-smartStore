@@ -1,0 +1,19 @@
+.thepageofitem{
+    display: flex;
+    /* width: 100%; */
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.theElement{
+    padding: 0.5%;
+    border: 2px black solid;
+    width: 600px;
+
+}
+.deleteitem{
+    padding: 5px;
+border-radius: 10%;
+background-color: white;
+/* width: 750px; */
+}

@@ -79,6 +79,28 @@ app.get('/getTheProduct/:userId', (req, res) => {
   });
 });
 
+app.get("/allproduct", async(req,res)=>{
+  try{
+  const result= await db.query ('SELECT *FROM product');
+  
+  res.json(result.rows)}
+  catch (err) {
+    console.log(err)
+  }
+})
+  
+app.delete("/deleteProduct/:id",async (req,res)=>{
+  const {id} =req.params;
+  try{
+  await db.query("DELETE FROM product WHERE id =($1)",
+    [id]
+  )
+   res.status(200).json({ message: "Product deleted successfully" });
+  } catch(err){
+   console.log(err)
+  }
+
+})
 // Add item to cart
 app.post('/add-to-cart', async (req, res) => {
   const { user_id, product_id, quantity, name_product, price } = req.body;
@@ -93,6 +115,23 @@ app.post('/add-to-cart', async (req, res) => {
     res.status(500).send("Error adding to cart");
   }
 });
+app.post('/add-to-product', async (req, res) => {
+  const { id, name, category, image, new_price, old_price,processorgeneration ,processorfamily,processorspeed
+ } = req.body;
+
+  try {
+    await db.query(
+      `INSERT INTO product (id, name, category, image, new_price, old_price ,processorgeneration,processorfamily,processorspeed
+) VALUES ($1, $2, $3, $4, $5, $6,$7,$8,$9)`,
+      [id, name, category, image, new_price, old_price,processorgeneration,processorfamily,processorspeed]
+    );
+    res.status(200).send("Added a new product");
+  } catch (err) {
+    console.error("Error inserting product:", err);
+    res.status(500).send("Error adding product");
+  }
+});
+
 
 // Delete item from cart
 app.delete("/delete-product/:id", async (req, res) => {

@@ -31,6 +31,8 @@ function Cart() {
         .then(() => {
           alert('Item deleted');
           setData(prev => prev.filter(i => i.id !== item.id));
+              window.location.reload();
+
         })
         .catch(err => console.error('Delete error:', err));
     } else {
@@ -48,6 +50,8 @@ function Cart() {
           setData(prev => prev.map(i =>
             i.id === item.id ? { ...i, quantity: i.quantity - 1 } : i
           ));
+              window.location.reload();
+
         })
         .catch(err => console.error('Update error:', err));
     }

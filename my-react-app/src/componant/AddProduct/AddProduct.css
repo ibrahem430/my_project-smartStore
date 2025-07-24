@@ -1,0 +1,15 @@
+
+.thepage{
+        background-color: rgb(232, 233, 234);
+
+}
+.theaddproduct{
+    margin-left: 30%;
+}
+input{
+    padding: 8px;
+    width: 50%;
+}
+label{
+    width: 30%;
+}
