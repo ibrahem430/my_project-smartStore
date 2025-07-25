@@ -73,7 +73,7 @@ function Card(props) {
   return (
     <div className="theCrde" style={{ margin: "0px" }}>
       <div className='the_offer'>
-        {props.offer && <h3>-{props.offer}%</h3>}
+        {props.offer ? <h3>-{props.offer}%</h3>:null}
         {props.new && <h2>{props.new}</h2>}
       </div>
 
