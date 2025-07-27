@@ -116,25 +116,44 @@ app.post('/add-to-cart', async (req, res) => {
   }
 });
 app.post('/add-to-product', async (req, res) => {
-  const { id, name, category, image, new_price, old_price,processorgeneration ,processorfamily,processorspeed,processorcache,	numberofcores,	ramcapacity,memorytype,	storagecapacity	,storagetype,graphicmanufacturer	,graphicmodel,	boostclock,	tgp,	graphicmemory	,graphicmemorytype	,graphicmemorysource,displaysize	,displaytechnology,	displayresolution,	keyboard,	type,	offer,isnew,ports,	contrastratio,	responsetime,	signalfrequency,	coolingsystemmodel,	casemodel,	lighttype,	powersupply,	keyboardfeatures
-
-
-
-
-
+  const { id, name, category, image, new_price, old_price,processorgeneration ,processorfamily,processorspeed,processorcache,	numberofcores,	ramcapacity,memorytype,	storagecapacity	,storagetype,graphicmanufacturer	,graphicmodel,	boostclock,	tgp,	graphicmemory	,graphicmemorytype	,graphicmemorysource,displaysize	,displaytechnology,	displayresolution,	keyboard,	type,	offer,isnew,ports,	contrastratio,	responsetime,	signalfrequency,	coolingsystemmodel,	casemodel,	lighttype,	powersupply,	keyboardfeatures,opticaldrive,	camera,	audio,	fingerprint,	networking	,batterynumberofcells	,operationsystem,	warranty,	weightanddimensions,	touchscreen
  } = req.body;
 
   try {
-    await db.query(
-      `INSERT INTO product (id, name, category, image, new_price, old_price,processorgeneration ,processorfamily,processorspeed,processorcache,	numberofcores,	ramcapacity,memorytype,	storagecapacity	,storagetype,graphicmanufacturer	,graphicmodel,	boostclock,	tgp,	graphicmemory	,graphicmemorytype	,graphicmemorysource,displaysize	,displaytechnology,	displayresolution,	keyboard,	type,	offer,isnew,ports,	contrastratio,	responsetime,	signalfrequency,	coolingsystemmodel,	casemodel,	lighttype,	powersupply,	keyboardfeatures
+   await db.query(
+  `INSERT INTO product (
+    id, name, category, image, new_price, old_price,
+    processorgeneration, processorfamily, processorspeed, processorcache,
+    numberofcores, ramcapacity, memorytype, storagecapacity, storagetype,
+    graphicmanufacturer, graphicmodel, boostclock, tgp, graphicmemory,
+    graphicmemorytype, graphicmemorysource, displaysize, displaytechnology,
+    displayresolution, keyboard, type, offer, isnew, ports, contrastratio,
+    responsetime, signalfrequency, coolingsystemmodel, casemodel, lighttype,
+    powersupply, keyboardfeatures, opticaldrive, camera, audio, fingerprint,
+    networking, batterynumberofcells, operationsystem, warranty,
+    weightanddimensions, touchscreen
+  ) VALUES (
+    $1, $2, $3, $4, $5, $6, $7, $8, $9, $10,
+    $11, $12, $13, $14, $15, $16, $17, $18, $19, $20,
+    $21, $22, $23, $24, $25, $26, $27, $28, $29, $30,
+    $31, $32, $33, $34, $35, $36, $37, $38, $39, $40,
+    $41, $42, $43, $44, $45, $46, $47, $48
+  )`,
+  [
+    id, name, category, image, new_price, old_price,
+    processorgeneration, processorfamily, processorspeed, processorcache,
+    numberofcores, ramcapacity, memorytype, storagecapacity, storagetype,
+    graphicmanufacturer, graphicmodel, boostclock, tgp, graphicmemory,
+    graphicmemorytype, graphicmemorysource, displaysize, displaytechnology,
+    displayresolution, keyboard, type, offer, isnew, ports, contrastratio,
+    responsetime, signalfrequency, coolingsystemmodel, casemodel, lighttype,
+    powersupply, keyboardfeatures, opticaldrive, camera, audio, fingerprint,
+    networking, batterynumberofcells, operationsystem, warranty,
+    weightanddimensions, touchscreen
+  ]
+);
 
-
-) VALUES ($1, $2, $3, $4, $5, $6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19,$20,$21,$22,$23,$24,$25,$26,$27,$28,$29,$30,$31,$32,$33,$34,$35,$36,$37,$38)`,
-      [id, name, category, image, new_price, old_price,processorgeneration ,processorfamily,processorspeed,processorcache,	numberofcores,	ramcapacity,memorytype,	storagecapacity	,storagetype,graphicmanufacturer	,graphicmodel,	boostclock,	tgp,	graphicmemory	,graphicmemorytype	,graphicmemorysource,displaysize	,displaytechnology,	displayresolution,	keyboard,	type,	offer,isnew,ports,	contrastratio,	responsetime,	signalfrequency,	coolingsystemmodel,	casemodel,	lighttype,	powersupply,	keyboardfeatures
-
-
-]
-    );
+   
     res.status(200).send("Added a new product");
   } catch (err) {
     console.error("Error inserting product:", err);

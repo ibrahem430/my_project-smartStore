@@ -1,10 +1,19 @@
 
 .thepage{
-        background-color: rgb(232, 233, 234);
+        /* background-color: rgb(232, 233, 234); */
 
 }
 .theaddproduct{
     margin-left: 30%;
+}
+.theaddproduct button{
+    padding: 5px;
+    background-color: white;
+    border-radius: 4px;
+}
+.theaddproduct button:hover{
+      background-color: black;
+    color: white;
 }
 input{
     padding: 8px;
@@ -12,4 +21,21 @@ input{
 }
 label{
     width: 30%;
+}
+.button_of_add{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.button_of_add button{
+    padding: 5px;
+    background-color: white;
+    border-radius: 4px;
+
+}
+.button_of_add button:hover{
+    background-color: black;
+    color: white;
 }

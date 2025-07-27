@@ -31,11 +31,11 @@ function AllProduct() {
  }
  
 
- const[isnew,setisnew]=useState('')
+
  
      return (<div className='thepageofitem'>
  {data.map((item, index) => (
-
+ 
   <div key={index} className="theElement">
                                 <img style={{height:"200px" ,width:"250px"}} src={`http://localhost:5000/image/${item.image}`}  alt="" />
 
@@ -67,9 +67,7 @@ function AllProduct() {
 {item.keyboard && <div>keyboard: {item.keyboard}</div>}
 {item.type && <div>type: {item.type}</div>}
 {item.offer && <div>offer: {item.offer}</div>}
-<div>new: {item.isnew}</div>
-<input type="text" value={isnew} onChange={(e)=>setisnew(e.target.value)} />
-<button>change</button>
+{ item.isnew &&<div>new: {item.isnew}</div>}
 {item.ports && <div>ports: {item.ports}</div>}
 {item.contrastratio && <div>contrastratio: {item.contrastratio}</div>}
 {item.responsetime && <div>responsetime: {item.responsetime}</div>}
@@ -79,6 +77,20 @@ function AllProduct() {
 {item.lighttype && <div>lighttype: {item.lighttype}</div>}
 {item.powersupply && <div>powersupply: {item.powersupply}</div>}
 {item.keyboardfeatures && <div>keyboardfeatures: {item.keyboardfeatures}</div>}
+
+
+
+
+{item.opticaldrive && <div>opticaldrive: {item.opticaldrive}</div>}
+{item.camera && <div>camera: {item.camera}</div>}
+{item.audio && <div>audio: {item.audio}</div>}
+{item.fingerprint && <div>fingerprint: {item.fingerprint}</div>}
+{item.operationsystem && <div>operationsystem: {item.operationsystem}</div>}
+{item.batterynumberofcells && <div>batterynumberofcells: {item.batterynumberofcells}</div>}
+{item.networking && <div>networking: {item.networking}</div>}
+{item.warranty && <div>warranty: {item.warranty}</div>}
+{item.weightanddimensions && <div>weightanddimensions: {item.weightanddimensions}</div>}
+{item.touchscreen && <div>touchscreen: {item.touchscreen}</div>}
 
      <button onClick={()=>handldelete(item)} className='deleteitem'>delete item</button>
   </div>
