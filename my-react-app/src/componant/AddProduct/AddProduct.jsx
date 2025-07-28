@@ -1,6 +1,9 @@
 import React from 'react'
 import { useState } from 'react'
 import "./AddProduct.css"
+import { useEffect } from 'react';
+import {  useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 function AddProduct() {
   const [laptop, setlaptop] = useState(false); 
@@ -67,6 +70,23 @@ function AddProduct() {
         const[warranty,setwarranty]=useState('');
         const[weightanddimensions,setweightanddimensions]=useState('');
         const[touchscreen,settouchscreen]=useState('');
+
+ const navigate = useNavigate();
+
+  const userId = localStorage.getItem('idAdmin');
+
+  useEffect(() => {
+    if (userId!=1) {
+         Swal.fire({
+        title: 'Warning!',
+        text: 'Please login first!',
+        icon: 'warning',
+        confirmButtonColor: 'green',
+      });
+      navigate('/');
+      return;
+    }})
+
 function handelchange(){
   fetch("http://localhost:5000/add-to-product",{
     method: "POST",

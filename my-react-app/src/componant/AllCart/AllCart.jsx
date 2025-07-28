@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import "./AllCart.css"
+import {  useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 function AllCart() {
   const [data, setData] = useState([]);
 
@@ -9,6 +11,22 @@ function AllCart() {
       .then((data) => setData(data))
       .catch((err) => console.log(err));
   }, []); 
+
+ const navigate = useNavigate();
+
+  const userId = localStorage.getItem('idAdmin');
+
+  useEffect(() => {
+    if (userId!=1) {
+    Swal.fire({
+   title: 'Warning!',
+   text: 'Please login first!',
+   icon: 'warning',
+   confirmButtonColor: 'green',
+ });
+      navigate('/');
+      return;
+    }})
 
   return (
     <div className='thepageofcart'>

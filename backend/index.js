@@ -61,6 +61,28 @@ app.post('/login', async (req, res) => {
     res.status(500).send('Login error');
   }
 });
+app.post("/loginAdmin",(req,res)=>{
+  const{email,password}=req.body;
+   const correct=1;
+  try{
+   if(email==='tacksmart'){
+    if(password==="12345"){ 
+        res.json({ correct});
+    }
+    else{
+       return res.status(401).send('Incorrect password')
+    }
+   }
+   else{
+    return res.status(400).send('email not correct')
+   }
+
+  }
+  catch(err){
+    console.error(err);
+    return res.status(500).send("Server error");
+  }
+})
 
 app.get("/product", (req, res) => {
   const sql = "SELECT * FROM product";

@@ -27,35 +27,36 @@ function Hero() {
        <h1 style={{textAlign:'center', marginBottom:"5%" ,color:"rgb(0, 0, 0)", fontSize:"40px"}}>The Products</h1>
         <div className="hero-prodect">
             
-            <div className='size-prodect'>
+            <div className='size-prodect'  onClick={() => window.scrollTo(0, 0)}>
               <Link to="/pcs">  <img className='theSizeOfPhoto' src={pcImg} alt="" /></Link>
              <Link to="/pcs">  <h2 className='thetext'>PCs</h2></Link>
             </div>
-            <div className='size-prodect'>
+            <div className='size-prodect'  onClick={() => window.scrollTo(0, 0)}>
             <Link to="/Laptop"> <img className='theSizeOfPhoto' src={laptop} alt="laptop" /></Link>
              <Link to="/Laptop"><h2 className='thetext'>Laptops</h2></Link>
             </div>
-         <div className='size-prodect'>
+         <div className='size-prodect'  onClick={() => window.scrollTo(0, 0)}>
              <Link to="/gaming" > <img className='theSizeOfPhoto' src={gamingImg} alt="" /></Link>
             <Link to="/gaming"> <h2 className='thetext'>Gaming </h2></Link>
            </div>
-           <div className='size-prodect'>
+           <div className='size-prodect'  onClick={() => window.scrollTo(0, 0)}>
               <Link to="/keyboards"> <img className='theSizeOfPhoto' src={keyboardImg} alt="" /></Link> 
              <Link to="/keyboards">    <h2 className='thetext'>Keyboards</h2></Link>
            </div>
-           <div className='size-prodect'> 
+           <div className='size-prodect' onClick={() => window.scrollTo(0, 0)}> 
              <Link to="/mouse" >   <img className='theSizeOfPhoto' src={mouseImg} alt="" /> </Link>
              <Link to="/mouse" >  <h2 className='thetext'>Mouses</h2></Link> 
            </div>
-           <div className='size-prodect'>
+           <div className='size-prodect'  onClick={() => window.scrollTo(0, 0)}>
                <Link to="/headphones">  <img className='theSizeOfPhoto' src={headImg} alt="" /></Link>
               <Link to="/headphones">   <h2 className='thetext'>Headset</h2></Link> 
            </div>
-           <div className='size-prodect'>
+           <div className='size-prodect'  onClick={() => window.scrollTo(0, 0)}>
              <Link to="/monitor"><img className='theSizeOfPhoto' src={monitorImg} alt="" /></Link>
             <Link to="/monitor" ><h2 className='thetext'>Monitors</h2></Link> 
            </div>
-           <div className='size-prodect'>
+           <div className='size-prodect'  onClick={() => window.scrollTo(0, 0)}>
+
             <Link to="/charges"> <img className='theSizeOfPhoto' src={chargeImg} alt="" /></Link>
             <Link to="/charges"><h2 className='thetext'>Chargers</h2></Link> 
            </div>

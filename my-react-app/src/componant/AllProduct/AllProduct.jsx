@@ -2,6 +2,11 @@ import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import "./AllProduct.css"
+import {  useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
+
+
+
 function AllProduct() {
    const [data,setdata]=useState([]);
    const[id,setid]=useState('');
@@ -54,7 +59,21 @@ function AllProduct() {
 
  
 
+const navigate = useNavigate();
 
+  const userId = localStorage.getItem('idAdmin');
+
+  useEffect(() => {
+    if (userId!=1) {
+   Swal.fire({
+  title: 'Warning!',
+  text: 'Please login first!',
+  icon: 'warning',
+  confirmButtonColor: 'green',
+});
+      navigate('/');
+      return;
+    }})
 
      return (<div>  
          <div className='update-product'>

@@ -3,53 +3,78 @@
 .footer{
     display: flex;
     align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    gap: 30px;
+
+    justify-content:space-around ;
+   
     background-color: black;
     width: 100%;
     padding: 0px;
     margin: 0px;
+    padding-top: 2%;
+    padding-bottom: 2%;
 }
-.footer-logo{
+/* .footer-logo{
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 50px;
   color: white;
-}
-.footer-logo p{
-    font-size: 100px;
+} */
+.footer-logo h1{
+    font-size: 45px;
     margin: 0px;
-    color: white;
+    color: rgb(255, 0, 0);
+    margin: 0px;
 }
 .footer-logo a{
     text-decoration: none;
     color: white;
+    margin: 0px;
 }
 
 .theImg2-footer{
-    height: 30px;
-    width: 30px;
+    height: 35px;
+    width: 35px;
 }
 .theFooter-link{
     display: flex;
+    flex-direction: column;
     list-style: none;
     align-items: center;
-    justify-content: center;
-    gap :30px;
+    /* justify-content: center; */
+    gap :20px;
     font-size: 20px;
     color: white;
+        /* border: 1px white solid; */
+  padding-top: 20px;
 
+}
+
+.theFooter-link li{
+   color: rgb(255, 255, 255);
+  font-size: 30px;
+  font-weight: 700;
 }
 .theFooter-link li:hover{
    color: rgb(185, 185, 185);
 }
 .theIMgFlex{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 30px;
+}
+.img-and-text-socialmedia{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    gap: 10px;
+}
+.img-and-text-socialmedia h3{
+    color: white;
+    font-size: 25px;
+    margin: 0px;
 }
 .copyright{
     display: flex;
@@ -57,5 +82,39 @@
     justify-content: center;
     width: 100%;
     color: rgb(0, 0, 0);
-    background-color: rgb(139, 139, 139);
+    background-color: rgb(245, 239, 239);
+}
+.copyright p{
+    font-size: 18px;
+    font-weight: 700;
+}
+ .hero-prodect-footer{
+    
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    /* justify-content: space-around; */
+    /* border: 1px white solid; */
+ }
+ .size-prodect-footer h2{
+    margin-top: 0px;
+    margin-bottom: 0px;
+ }
+ .size-prodect-footer a{
+    text-decoration: none;
+    color: white;
+ }
+ .size-prodect-footer a:hover{
+    color:rgb(193, 193, 193) ;
+ }
+.thetext-footer{
+font-size: 22px;
+font-weight: 700;
+
+}
+.gradient {
+  background: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold; /* optional for better visual effect */
 }
