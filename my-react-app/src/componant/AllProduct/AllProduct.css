@@ -13,7 +13,50 @@
 }
 .deleteitem{
     padding: 5px;
-border-radius: 10%;
-background-color: white;
+border-radius: 25px;
+/* background-color: white; */
+background-color: red;
+color: black;
 /* width: 750px; */
+margin-top: 10px;
+margin-bottom: 1px;
+border: none;
 }
+.deleteitem:hover{
+    color: red;
+    background-color: black;
+}
+.update-product{
+    margin-bottom: 5%;
+    margin-top: 5%;
+    margin-left: 25%;
+    margin-right: 25%;
+    background-color: rgb(241, 241, 241);
+    padding: 20px;
+    border-radius: 20px;
+}
+.thebuttonOfUpdateProduct{
+       padding: 8px;
+    background-color: rgb(255, 222, 38);
+    border-radius: 4px;
+    font-weight: 700;
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+    border: none;
+}
+.thebuttonOfUpdateProduct:hover{
+    background-color: black;
+    color: rgb(255, 222, 38);
+}
+.update-product input{
+    border: 2px black solid;
+    width: 95%;
+    /* background-color: rgb(244, 244, 244); */
+}
+.update-product label{
+    font-size: 20px;
+     font-weight: 700;
+}
+/* .update-product{
+
+} */

@@ -105,7 +105,7 @@ function sortedFromSmailToBig(){
          price={item.new_price}
         image={`http://localhost:5000/image/${item.image}`} 
         offer={item.offer}
-        new={item.new}
+        new={item.isnew}
       />
           );
          

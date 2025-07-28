@@ -1,0 +1,11 @@
+.thepacageofcart{
+    border: 2px black solid;
+    width: 690px;
+    padding: 5px;
+}
+.thepageofcart{
+    margin: 50px;
+ display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}

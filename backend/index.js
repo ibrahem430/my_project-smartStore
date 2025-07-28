@@ -231,6 +231,25 @@ app.put("/update-cart", async (req, res) => {
     res.status(500).send('Error updating cart item');
   }
 });
+app.put("/updateproduct", async (req, res) => {
+  const { id, offer, isnew, new_price } = req.body;
+
+  try {
+    const result = await db.query(
+      `UPDATE product 
+       SET offer = $2, isnew = $3, new_price = $4 
+       WHERE id = $1 
+       RETURNING *`,
+      [id, offer, isnew, new_price]
+    );
+
+    res.json({ updated: result.rows[0] });
+  } catch (err) {
+    console.error("Update error:", err);
+    res.status(500).send("Error updating product");
+  }
+});
+
 
 app.get("/advertisements", (req, res) => {
   const sql = "SELECT * FROM advertisements";
@@ -248,6 +267,14 @@ app.get("/allcart", async(req,res)=>{
   }
 })
 
+app.get("/allUser", async(req,res)=>{
+  try{
+   const sql=await db.query("SELECT *FROM users") 
+   res.json(sql.rows)
+  }catch(err){
+     console.log(err)
+  }
+})
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });

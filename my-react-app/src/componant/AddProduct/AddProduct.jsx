@@ -132,7 +132,7 @@ function handelchange(){
 
   return (
     <div className='thepage'>
-        <h1 style={{textAlign:"center" ,fontSize:"50px"}}>Add A New Product</h1>
+        <h1 style={{textAlign:"center" ,fontSize:"50px" ,color:"rgb(18, 2, 46)"}}>Add A New Product</h1>
 
         <div className='button_of_add'>
         <button onClick={() => {setlaptop(true)
