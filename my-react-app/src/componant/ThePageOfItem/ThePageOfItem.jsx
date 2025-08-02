@@ -28,19 +28,19 @@ function ThePageOfItem(props) {
             <h2 className='Price'>Price:</h2>
             <h2 className='the-price-of-product'>JOD {product.old_price}</h2>
             <h1>JOD {product.new_price}</h1>
-            <div className='the-img-of-veza'>
+            {/* <div className='the-img-of-veza'>
               <img
                 src="https://gts.jo/image/catalog/gts_theme/gts-payment-options.png"
                 alt=""
               />
-            </div>
-            <button className='whatsapp'>
+            </div> */}
+            {/* <button className='whatsapp'>
               <img
                 style={{ height: "20px" }}
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1022px-WhatsApp.svg.png"
                 alt=""
               /> Chat With Us In WhatsApp
-            </button>
+            </button> */}
           </div>
         </div>
         <div style={{ marginBottom: "10%" }}></div>

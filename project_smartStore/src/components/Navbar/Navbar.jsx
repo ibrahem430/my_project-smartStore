@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import "./Navbar.css";
-
+import Swal from 'sweetalert2';
 function Navbar() {
   const [activeNav, setActiveNav] = useState("");
   const [cartCount, setCartCount] = useState(0);
@@ -24,9 +24,14 @@ function Navbar() {
 
   const handleLogout = () => {
     localStorage.clear();
-    alert("You have been logged out.");
+    Swal.fire({
+  title: "You have been logged out",
+  icon: "success",
+  draggable: true
+});
+    // alert("You have been logged out.");
     nav("/login");
-    window.location.reload();
+    // window.location.reload();
   };
 
   return (

@@ -45,6 +45,10 @@ h1{
     font-weight: 700;
     width: 50%;
 }
+.logout-admin:hover{
+background-color: black;
+color: red;
+}
 .thepage-afetr-login{
     display: flex;
     flex-direction: column;
@@ -53,3 +57,4 @@ h1{
     gap: 30px;
 
 }
+

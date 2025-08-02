@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import "./Prodect.css";
+import Swal from 'sweetalert2';
+
 
 function Card(props) {
   const navigate = useNavigate();
@@ -16,7 +18,7 @@ function Card(props) {
       .catch((err) => console.error("Fetch error:", err));
   }, [userId]);
 
-  const handleAdd = () => {
+  const  handleAdd = () => {
     if (!userId) {
       alert("Please login first!");
       navigate('/login');
@@ -26,47 +28,85 @@ function Card(props) {
     const found = data.find(item => item.product_id === props.id);
 
     if (!found) {
-      fetch('http://localhost:5000/add-to-cart', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          user_id: userId,
-          product_id: props.id,
-          quantity: 1,
-          name_product: props.name,
-          price: props.price
-        }),
-      })
-        .then((res) => res.text())
-        .then(() => {
-          alert(`${props.name} added to cart`);
-          navigate('/cart');
-          window.location.reload(); // optional
-        })
+fetch('http://localhost:5000/add-to-cart', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+    user_id: userId,
+    product_id: props.id,
+    quantity: 1,
+    name_product: props.name,
+    price: props.price,
+    image: props.image
+  }),
+})
+  .then((res) => res.text())
+  .then(() => {
+    Swal.fire({
+    
+      text: props.name,
+      imageUrl: props.image,
+      imageWidth: 300,
+      imageHeight: 200,
+      imageAlt: "Custom image",
+  
+      confirmButtonText: "Yes",                  
+    }).then((result) => {
+
+      if (result.isConfirmed) {
+        window.location.reload();     
+      }
+    });
+  })
+  .catch((err) => {
+    console.error("Add to cart error:", err);
+    Swal.fire({
+      icon: "error",
+      title: "Add failed",
+      text: "Could not add the product to the cart."
+    });
+  })
+
+          
+          // window.location.reload(); // optional
+      
         .catch((err) => {
           alert(`Add error`);
           console.error(err);
         });
     } else {
-      fetch('http://localhost:5000/update-cart', {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          user_id: userId,
-          product_id: props.id,
-          quantity: found.quantity + 1,
-        }),
-      })
-        .then((res) => res.text())
-        .then(() => {
-          alert(`Quantity updated`);
-          navigate('/cart');
-          window.location.reload(); // optional
-        })
-        .catch((err) => {
-          alert(`Update error`);
-          console.error(err);
-        });
+fetch('http://localhost:5000/update-cart', {
+  method: 'PUT',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+    user_id: userId,
+    product_id: props.id,
+    quantity: found.quantity + 1,
+  }),
+})
+  .then((res) => res.text())
+  .then(() => {
+    Swal.fire({
+    
+      text: props.name,
+      imageUrl: props.image,
+      imageWidth: 300,
+      imageHeight: 200,
+      imageAlt: "Custom image",
+  
+      confirmButtonText: "Yes",
+    
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.reload();
+      }
+    });
+  })
+  .catch((err) => {
+    alert("Update error");
+    console.error("Update error:", err);
+  });
+
     }
   };
 

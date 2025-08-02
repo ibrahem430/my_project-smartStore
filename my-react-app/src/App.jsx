@@ -7,6 +7,8 @@ import AllProduct from './componant/AllProduct/AllProduct'
 import AllUser from './componant/AllUser/AllUser'
 import AllCart from './componant/AllCart/AllCart'
 import Home from './componant/Home/Home'
+import PageOfItem from './componant/PageOfItem'; // adjust relative path as needed
+
 function App() {
 
   return (
@@ -18,6 +20,7 @@ function App() {
         <Route path='/allproduct' element={<AllProduct/>}  ></Route>
     <Route path='/alluser' element={<AllUser/>}  ></Route>
     <Route path='/allcart' element={<AllCart/>}  ></Route>
+    <Route path="/pageOfItem/:productId" element={<PageOfItem  />} />
 
     
     

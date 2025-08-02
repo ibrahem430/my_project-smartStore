@@ -125,14 +125,14 @@ app.delete("/deleteProduct/:id",async (req,res)=>{
 })
 // Add item to cart
 app.post('/add-to-cart', async (req, res) => {
-  const { user_id, product_id, quantity, name_product, price } = req.body;
+  const { user_id, product_id, quantity, name_product, price, image } = req.body;
   try {
     await db.query(
-      `INSERT INTO cart (user_id, product_id, quantity, name_product, price) VALUES ($1, $2, $3, $4, $5)`,
-      [user_id, product_id, quantity, name_product, price]
+      `INSERT INTO cart (user_id, product_id, quantity, name_product, price,image) VALUES ($1, $2, $3, $4, $5,$6)`,
+      [user_id, product_id, quantity, name_product, price, image]
     );
     res.status(200).send("Item added to cart");
-  } catch (err) {
+  } catch (err) {  
     console.error(err);
     res.status(500).send("Error adding to cart");
   }

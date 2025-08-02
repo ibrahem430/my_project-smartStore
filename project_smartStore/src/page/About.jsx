@@ -11,7 +11,9 @@ function About() {
      fontSize:"25px",
      hight: "120%%",
      width:"70%",
-     border:"3px black solid"
+     border:"none",
+     backgroundColor:"rgb(246, 246, 246)",
+     
    }
  const theFontFamily = {
     fontFamily: "'Times New Roman', serif",
@@ -26,7 +28,7 @@ const background={
     <div style={background}>
     <div style={thepacge}>
      
-        <h2 style={{margin:"1%"}}>About</h2>
+        <h1 style={{margin:"1%" ,textAlign:"center"}}>About</h1>
         <p style={theFontFamily}><span style={{color:"rgb(173, 12, 12)", fontSize:"30px"}}>TechSmart</span> is a smart online store specialized in selling electronic equipment such as computers, laptops, monitors, headphones, keyboards, mice, and chargers.<br/><br/>
 
          Our goal is to provide the best and smoothest shopping experience for our users — one that is fast, simple, and secure. We focus on meeting customer needs in an intelligent and efficient way.<br/> <br/>

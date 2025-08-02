@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import "./AllProduct.css"
-import {  useNavigate } from 'react-router-dom';
+import {  Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 
@@ -111,13 +111,13 @@ const navigate = useNavigate();
   <div key={index} className="theElement">
                                 <img style={{height:"200px" ,width:"250px"}} src={`http://localhost:5000/image/${item.image}`}  alt="" />
 
-   {item.id && <div>id: {item.id}</div>}
-{item.name && <div>name: {item.name}</div>}
-{item.category && <div>category: {item.category}</div>}
-{item.image && <div>image: {item.image}</div>}
-{item.new_price && <div>new_price: {item.new_price}</div>}
-{item.old_price && <div>old_price: {item.old_price}</div>}
-{item.processorgeneration && <div>processorgeneration: {item.processorgeneration}</div>}
+  {item.id && <div style={{textDecoration:"none", color:"black", fontWeight:"700"}} >id: {item.id}</div>}
+<Link style={{textDecoration:"none", color:"black", fontWeight:"700"}} to={`/pageOfitem/${item.id}`}>{item.name && <div>name: {item.name}</div>}</Link> 
+{item.category && <div style={{textDecoration:"none", color:"red", fontWeight:"700" }}>category: {item.category}</div>}
+{/* {item.image && <div>image: {item.image}</div>} */}
+{item.new_price && <div style={{textDecoration:"none", color:"red", fontWeight:"700"}}>new_price: {item.new_price}</div>}
+{item.old_price && <div style={{textDecoration:"none", color:"red", fontWeight:"700"}}>old_price: {item.old_price}</div>}
+{/* {item.processorgeneration && <div>processorgeneration: {item.processorgeneration}</div>}
 {item.processorfamily && <div>processorfamily: {item.processorfamily}</div>}
 {item.processorspeed && <div>processorspeed: {item.processorspeed}</div>}
 {item.processorcache && <div>processorcache: {item.processorcache}</div>}
@@ -136,11 +136,11 @@ const navigate = useNavigate();
 {item.displaysize && <div>displaysize: {item.displaysize}</div>}
 {item.displaytechnology && <div>displaytechnology: {item.displaytechnology}</div>}
 {item.displayresolution && <div>displayresolution: {item.displayresolution}</div>}
-{item.keyboard && <div>keyboard: {item.keyboard}</div>}
-{item.type && <div>type: {item.type}</div>}
-{item.offer && <div>offer: {item.offer}</div>}
-{ item.isnew &&<div>new: {item.isnew}</div>}
-{item.ports && <div>ports: {item.ports}</div>}
+{item.keyboard && <div>keyboard: {item.keyboard}</div>} */}
+{item.type && <div style={{textDecoration:"none", color:"red", fontWeight:"700"}}>type: {item.type}</div>}
+{/* {item.offer && <div>offer: {item.offer}</div>}
+{ item.isnew &&<div>new: {item.isnew}</div>} */}
+{/* {item.ports && <div>ports: {item.ports}</div>}
 {item.contrastratio && <div>contrastratio: {item.contrastratio}</div>}
 {item.responsetime && <div>responsetime: {item.responsetime}</div>}
 {item.signalfrequency && <div>signalfrequency: {item.signalfrequency}</div>}
@@ -162,7 +162,7 @@ const navigate = useNavigate();
 {item.networking && <div>networking: {item.networking}</div>}
 {item.warranty && <div>warranty: {item.warranty}</div>}
 {item.weightanddimensions && <div>weightanddimensions: {item.weightanddimensions}</div>}
-{item.touchscreen && <div>touchscreen: {item.touchscreen}</div>}
+{item.touchscreen && <div>touchscreen: {item.touchscreen}</div>} */}
 
      <button onClick={()=>handldelete(item)} className='deleteitem'>delete item</button>
   </div>

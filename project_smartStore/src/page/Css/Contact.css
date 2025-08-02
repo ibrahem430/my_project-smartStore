@@ -1,0 +1,90 @@
+.ollpage{
+  width: 60%;
+  margin-left: 20%;
+  min-height: 33vh;
+  /* border-radius: 40px; */
+  
+}
+.the-work-time{
+    background-color:yellow;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-weight: 700;
+    font-size: 25px;
+    border-radius: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    /* border: 1px black solid; */
+}
+.contactDetalse{
+    text-align: center;
+    font-size: 50px;
+    color: rgb(0, 0, 0);
+    margin-bottom: 50px;
+}
+.whatsapp1{
+    margin-top: 20px;
+       background-color:#25D366;
+    text-align: center;
+    font-weight: 900;
+    font-size: 30px;
+    border-radius: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    /* display: flex;
+    
+    align-items: center;
+    justify-content: center; */
+}
+.gmail{
+      margin-top: 20px;
+
+       background-color:#ededed;
+    text-align: center;
+    font-weight: 900;
+    font-size: 30px;
+    border-radius: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px; 
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.worktime-whatsapp-gmail{
+border-radius: 25px; 
+}
+.facebook-instgram-x{
+     display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+.whatsapp1 button{
+          display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+   background-color: #25D366;
+   color: white;
+  border-radius: 50px;
+ font-weight: 700;
+  /* margin-top: 5%;
+
+  margin-bottom: 5%; */ 
+   margin-left: 38%;
+   font-size: 15px;
+   border: white 2px solid;
+}
+.whatsapp1 button:hover{
+      background-color: white;
+  color: #25D366;
+}
+.whatsapp1 h3{
+    color: white;
+}

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Css/LoginSignup.css';
-
+import Swal from 'sweetalert2';
 function LoginSignup() {
   const [isLogin, setIsLogin] = useState(true); 
   const [name, setName] = useState('');
@@ -24,7 +24,16 @@ function LoginSignup() {
       .then((data) => {
         if (data.userId || data.user?.id) {
           localStorage.setItem('userId', data.userId || data.user.id);
-          alert(isLogin ? 'Login successful' : 'Registration successful');
+          {isLogin ? Swal.fire({
+                title: "login successful",
+                icon: "success",
+               draggable: true
+                                }) 
+: Swal.fire({
+                title: "Registration successful",
+                icon: "success",
+               draggable: true
+                                }) }
           navigate('/'); // or "/"
         } else {
           alert('Failed: ' + (data.message || 'Unknown error'));

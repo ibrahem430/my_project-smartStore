@@ -29,7 +29,7 @@ function Cart() {
         method: 'DELETE',
       })
         .then(() => {
-          alert('Item deleted');
+          // alert('Item deleted');
           setData(prev => prev.filter(i => i.id !== item.id));
               window.location.reload();
 
@@ -46,7 +46,7 @@ function Cart() {
         }),
       })
         .then(() => {
-          alert('Quantity updated');
+          // alert('Quantity updated');
           setData(prev => prev.map(i =>
             i.id === item.id ? { ...i, quantity: i.quantity - 1 } : i
           ));
@@ -79,39 +79,50 @@ function Cart() {
     window.print();
   };
 
+
   return (
     <div className='thecart'>
-      <h1>The Cart Of Item</h1>
+     <div className='the-cart-count-price'>
+       
+         <h1>The Cart Of Item</h1>
+      <div className='thetotalpricecart'>
+         <div className='thetotalcartcount'><h2>Total items : {cartCount}</h2></div>
+        
+         <h2>Total count : {priceCount}</h2></div>
+      
+      </div> 
       <table>
+        
         <thead>
-          <tr>
-            <td>Image</td>
-            <td>Product</td>
-            <td>Modale</td>
-            <td>Price</td>
-            <td>Quantity</td>
-            <td>Delete</td>
+            {/* {data.map((item) => ( */}
+          <tr  >
+            <td style={{width:"150px"}}>Image</td>
+            <td style={{width:"400px"}}>Product</td>
+            <td style={{width:"120px"}}>Modale</td>
+            <td style={{width:"120px"}}>Price</td>
+            <td style={{width:"120px"}}>Quantity</td>
+            <td style={{width:"120px"}}>Delete</td>
           </tr>
+            {/* ))} */}
         </thead>
-        <tbody>
+       
+        <tbody> 
           {data.map((item) => (
             <tr key={item.id}>
-              <td>
-                <img
-                  src={item.image ? `http://localhost:5000/image/${item.image}` : "fallback.png"}
-                  alt={item.name_product || "product image"}
-                  width="50"
-                />
+              <td style={{width:"150px"}}>
+  <img src={item.image} alt={item.name_product} style={{width:"120px",height:"100px"}} />
+
+
               </td>
-              <td style={{ width: "40%" }}>
+              <td style={{width:"400px"}}>
                 <Link style={{ textDecoration: "none", color: "black" }} to={`/pageOfitem/${item.product_id}`}>
                   {item.name_product ? item.name_product.substring(0, 70) : "No name"}
                 </Link>
               </td>
-              <td style={{ width: "20%" }}>Dell</td>
-              <td style={{ width: "20%" }}>${item.price}</td>
-              <td>{item.quantity}</td>
-              <td>
+              <td style={{width:"120px"}}>{item.type}</td>
+              <td style={{width:"120px"}}>${item.price}</td>
+              <td style={{width:"120px"}} >{item.quantity}</td>
+              <td style={{width:"120px"}}>
                 <button
                   onClick={() => handleRemove(item)}
                   style={{ border: "none", backgroundColor: "white", cursor: "pointer" }}
@@ -128,9 +139,8 @@ function Cart() {
         </tbody>
       </table>
 
-      <div><h2>Total items: {cartCount}</h2></div>
-      <div> <h2>Total count : {priceCount}</h2></div>
-      <div><button onClick={handlePrint}>Print</button></div>
+    
+      <div><button className='print' onClick={handlePrint}>Print</button></div>
     </div>
   );
 }

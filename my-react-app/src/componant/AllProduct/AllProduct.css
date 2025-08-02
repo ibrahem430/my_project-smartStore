@@ -8,11 +8,11 @@
 .theElement{
     padding: 0.5%;
     border: 2px black solid;
-    width: 600px;
+    width: 250px;
 
 }
 .deleteitem{
-    padding: 5px;
+    padding: 7px;
 border-radius: 25px;
 /* background-color: white; */
 background-color: red;
@@ -21,6 +21,8 @@ color: black;
 margin-top: 10px;
 margin-bottom: 1px;
 border: none;
+width: 100%;
+font-weight: 1000;
 }
 .deleteitem:hover{
     color: red;

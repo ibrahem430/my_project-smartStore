@@ -55,7 +55,7 @@ function App() {
   <Route path="/Laptop" element={<ShopCategory banner={labtop_banner} category="Laptop" />} />
   <Route path="/keyboards" element={<ShopCategory banner={keyboard_banner} category="keyboard" />} />
   <Route path="/mouse" element={<ShopCategory banner={mouse_banner} category="mouse" />} />
-  <Route path="/headphones" element={<ShopCategory banner={headset_banner} category="headphones" />} />
+  <Route path="/headphones" element={<ShopCategory banner={headset_banner} category="headset" />} />
   <Route path="/monitor" element={<ShopCategory banner={monitor_banner}  category="monitor" />} />
   <Route path="/charges" element={<ShopCategory banner={charge_banner}  category="charges" />} />
   <Route path="/pageOfItem/:productId" element={<PageOfItem  />} />
@@ -66,8 +66,8 @@ function App() {
     <Route path="/pcs_gaming" element={<ShopCategory banner={pc_gaming_banner} category="pcs_gaming" />} />
   <Route path="/Laptop_gaming" element={<ShopCategory banner={laptop_gaming_banner} category="Laptop_gaming" />} />
   <Route path="/keyboards_gaming" element={<ShopCategory banner={keyboard_gaming_banner} category="keyboard_gaming" />} />
-  <Route path="/mouse_gaming" element={<ShopCategory banner={mouse_gaming_banner} category="mouse_gaming" />} />
-  <Route path="/headphones_gaming" element={<ShopCategory banner={headset_gaming_banner} category="headphones_gaming" />} />
+  <Route path="/mouse_gaming" element={<ShopCategory banner={mouse_gaming_banner} category="mouse gaming" />} />
+  <Route path="/headphones_gaming" element={<ShopCategory banner={headset_gaming_banner} category="headset gaming" />} />
   <Route path="/monitor_gaming" element={<ShopCategory banner={mounitor_gaming_banner}  category="monitor_gaming" />} />
 </Routes>
 
