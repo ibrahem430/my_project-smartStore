@@ -77,24 +77,24 @@ const navigate = useNavigate();
 
      return (<div>  
          <div className='update-product'>
-            <h2 style={{fontSize:"30px" }}>Update Product</h2>
+            <h2 style={{fontSize:"35px", textAlign:"center", margin:"0px", marginBottom:"3px",fontFamily:"'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif" }}>Update Product</h2>
             <form>
-          <label htmlFor='id' > Id</label>
+          <label htmlFor='id' style={{fontFamily:"'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif"}} > Id</label>
           <br />
            <input placeholder='Id' type='text' value={id} onChange={(e)=>setid(e.target.value)}  />
            <br />
            <br />
-            <label htmlFor='isnew' > New</label>
+            <label  style={{fontFamily:"'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif"}} htmlFor='isnew' > New</label>
             <br />
            <input placeholder='Is New' type='text' value={isnew} onChange={(e)=>setisnew(e.target.value)}  />
            <br />
            <br />
-            <label htmlFor='offer' > Offer</label>
+            <label  style={{fontFamily:"'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif"}} htmlFor='offer' > Offer</label>
             <br />
            <input placeholder='Offer' type='text' value={offer} onChange={(e)=>setoffer(e.target.value)}  />
            <br />
            <br />
-             <label htmlFor='new_price' >  New Price</label>
+             <label  style={{fontFamily:"'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif"}} htmlFor='new_price' >  New Price</label>
             <br />
            <input placeholder='New Price' type='text' value={new_price} onChange={(e)=>setnewprice(e.target.value)}  />
             <br />
@@ -103,7 +103,7 @@ const navigate = useNavigate();
           </form>
           
           </div>
-          <div><h1 style={{fontSize:"50px" ,textAlign:"center"}}>All Product</h1></div>
+          <div><h1 style={{fontSize:"50px" ,textAlign:"center" ,fontFamily:"'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif"}}>All Product</h1></div>
      <div className='thepageofitem'>
         
  {data.map((item, index) => (
@@ -113,7 +113,7 @@ const navigate = useNavigate();
 
   {item.id && <div style={{textDecoration:"none", color:"black", fontWeight:"700"}} >id: {item.id}</div>}
 <Link style={{textDecoration:"none", color:"black", fontWeight:"700"}} to={`/pageOfitem/${item.id}`}>{item.name && <div>name: {item.name}</div>}</Link> 
-{item.category && <div style={{textDecoration:"none", color:"red", fontWeight:"700" }}>category: {item.category}</div>}
+{/* {item.category && <div style={{textDecoration:"none", color:"red", fontWeight:"700" }}>category: {item.category}</div>} */}
 {/* {item.image && <div>image: {item.image}</div>} */}
 {item.new_price && <div style={{textDecoration:"none", color:"red", fontWeight:"700"}}>new_price: {item.new_price}</div>}
 {item.old_price && <div style={{textDecoration:"none", color:"red", fontWeight:"700"}}>old_price: {item.old_price}</div>}

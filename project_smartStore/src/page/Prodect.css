@@ -3,7 +3,7 @@ body{
 }
 .size_photo{
   width: 175px;
-  height: 150px;
+  height: 140px;
  
 }
 .cover-of-img{
@@ -90,4 +90,44 @@ padding: 10px;
       margin-top: 0px;
       padding: 10px;
       background-color: rgb(249, 28, 28);
+    }
+    @media (max-width: 768px) {
+
+      .theCrde{
+  height: 250px; 
+  width: 175px; 
+
+   grid-template: 10px 70px 50px 25px 25px;
+
+ 
+}
+.size_photo{
+  width: 125px;
+  height: 70px;
+ 
+}
+.click{
+  padding: 3px;
+  width:80%; 
+}
+.text_algin{
+line-height: 16px;
+font-size: 15px;
+
+}
+  .price{
+         font-size:16px ;
+    }
+      .the_offer h3{
+   
+   
+      font-weight: 3px;
+padding: 7px;
+    }
+    .the_offer h2{
+     
+     
+      padding: 7px;
+      background-color: rgb(249, 28, 28);
+    }
     }

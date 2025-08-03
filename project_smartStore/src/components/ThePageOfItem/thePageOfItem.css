@@ -2,7 +2,7 @@
     width: 80%;
     margin-left: 10%;
     margin-right: 10%;
-    margin-top: 10%;
+    margin-top: 7%;
 }
 
 .the-cover-of-img-and-name-and-price{
@@ -111,7 +111,7 @@
     .the-part-of-specification{
          width: 100%;
         background-color: #ffffff;
-        height: 30px;
+        /* height: 30px; */
     
     }
      .the-part-of-specification h3{
@@ -145,4 +145,28 @@
     background-color: rgb(236, 236, 236);
     border-radius: 5%;
 }
+  .the-name-of-specifications{
+        width: 90%;
+
+        margin-left: 5%;
+
+    }
+    .the-part-of-specification{
+         width: 90%;
+                margin-left: 5%;
+
+    
+    }
+    .the-name-of-product{
+    margin-left: 10%;
+     margin-top: 5%;
+    width: 80%;
+    font-size: 20px;
+}
+   .img-cover{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+} 
 }

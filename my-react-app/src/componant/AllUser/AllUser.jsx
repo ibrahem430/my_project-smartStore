@@ -31,9 +31,9 @@ function AllUser() {
          <table>
             <thead>
                 <tr>
-                    <td  style={{fontWeight:"700",textAlign:'center', backgroundColor:' rgb(83, 255, 246)', width:"600px"}}>ID</td>
-                    <td  style={{fontWeight:"700",textAlign:'center',backgroundColor:'  rgb(83, 255, 246)',width:"600px"}}> User Name</td>
-                    <td  style={{fontWeight:"700",textAlign:'center',backgroundColor:'  rgb(83, 255, 246)', width:"600px"}}>Email</td>
+                    <td  style={{fontWeight:"700",textAlign:'center', backgroundColor:' rgb(83, 255, 246)', width:"600px", fontSize:"20px"}}>ID</td>
+                    <td  style={{fontWeight:"700",textAlign:'center',backgroundColor:'  rgb(83, 255, 246)',width:"600px", fontSize:"20px"}}> User Name</td>
+                    <td  style={{fontWeight:"700",textAlign:'center',backgroundColor:'  rgb(83, 255, 246)', width:"600px", fontSize:"20px"}}>Email</td>
                 </tr>
             </thead></table>
       {data.map((item, index) => (
@@ -49,9 +49,9 @@ function AllUser() {
          <table>
             <tbody>
                  <tr>
-                   <td  className='thehover' style={{fontWeight:"700",textAlign:'center', width:"600px"}}>{item.id}</td>
-                    <td  className='thehover' style={{fontWeight:"700",textAlign:'center',width:"600px"}}>{item.username}</td>
-                    <td  className='thehover' style={{fontWeight:"700",textAlign:'center', width:"600px"}}>{item.email}</td>
+                   <td  className='thehover' style={{fontWeight:"700",textAlign:'center', width:"600px", fontSize:"20px"}}>{item.id}</td>
+                    <td  className='thehover' style={{fontWeight:"700",textAlign:'center',width:"600px", fontSize:"20px"}}>{item.username}</td>
+                    <td  className='thehover' style={{fontWeight:"700",textAlign:'center', width:"600px", fontSize:"20px"}}>{item.email}</td>
                 </tr>
             </tbody>
           </table>

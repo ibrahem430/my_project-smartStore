@@ -24,7 +24,7 @@ function Hero() {
   return (
     <div style={{}} >
     <div className='hero'>
-       <h1 style={{textAlign:'center', marginBottom:"5%" ,color:"rgb(0, 0, 0)", fontSize:"40px"}}>The Products</h1>
+       <h1 className='text' style={{}}>The Products</h1>
         <div className="hero-prodect">
             
             <div className='size-prodect'  onClick={() => window.scrollTo(0, 0)}>

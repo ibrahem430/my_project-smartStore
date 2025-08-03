@@ -5,6 +5,14 @@
  
     
 }
+.text{
+    text-align:center;
+     margin-bottom:5% ;
+     /* color:"rgb(0, 0, 0)"; */
+      font-size:40px;
+}
+
+
 .hero-prodect{
     display: flex;
     flex-wrap: wrap;
@@ -41,4 +49,36 @@
 .thetext:hover{
     font-size: 27px;
     color: rgb(80, 77, 77);
+}
+
+
+
+@media (max-width: 768px) {
+    .hero-prodect{
+ 
+    gap: 30px;
+    
+}
+.theSizeOfPhoto{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 6px rgb(255, 255, 255) solid;
+
+}
+  .size-prodect{
+    height: 5%;
+    width: 50px;
+}
+.hero{
+    margin-top: 1%;
+    margin-left: 1%;
+    margin-right: 1%;
+ 
+    
+}
+.text{
+    font-size: 30px ;
+    text-align: center;
+}
 }

@@ -88,3 +88,28 @@ border-radius: 25px;
 .whatsapp1 h3{
     color: white;
 }
+
+  @media (max-width: 768px) {
+    .ollpage{
+  width: 90%;
+  margin-left: 5%;
+  min-height: 33vh;
+}
+    .whatsapp1 button{
+          display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+   background-color: #25D366;
+   color: white;
+  border-radius: 50px;
+ font-weight: 700;
+  /* margin-top: 5%;
+
+  margin-bottom: 5%; */ 
+   margin-left: 22%;
+   font-size: 15px;
+   border: white 2px solid;
+}
+}

@@ -59,8 +59,8 @@ function ThePageOfItem(props) {
 
   return (
     <div>
-      <h3 style={{ color: " rgb(86, 86, 86)" }}>
-        Home/Shop/{product.category}/{product.name.substring(7, 30)}
+      <h3 style={{ color: " rgb(86, 86, 86)" ,marginLeft:"1%",marginRight:"1%"}}>
+        Home/Shop/{product.category}/{product.name.substring()}
       </h3>
       <div className='thepage33'>
         <h1>{product.type?.toUpperCase() || ''} </h1>
@@ -262,13 +262,15 @@ function ThePageOfItem(props) {
         )}
         {product.ports && (
           <div className='the-part-of-specification'>
-            <h3>ports: {product.ports} </h3>
+            <h3 >ports: {product.ports} </h3>
             <hr />
+            
           </div>
         )}
         {product.powersupply && (
           <div className='the-part-of-specification'>
             <h3>Power Supply: {product.powersupply} </h3>
+            
           </div>
         )}
 
@@ -289,6 +291,30 @@ function ThePageOfItem(props) {
             <hr />
           </div>
         )}
+        {(product.warranty ) && (
+          <div className='the-name-of-specifications'>
+            <h3>Warranty</h3>
+          </div>
+        )}
+        {product.warranty && (
+          <div className='the-part-of-specification'>
+            <h3>Warranty: {product.warranty} </h3>
+  
+          </div>
+        )}
+         {(
+          <div className='the-name-of-specifications'>
+            <h3>Other</h3>
+          </div>
+        )}
+        {product.camara && (
+          <div className='the-part-of-specification'>
+            <h3>camara: {product.camara} </h3>
+            <hr />
+          </div>
+        )}
+    
+    
       </div>
     </div>
   );

@@ -33,10 +33,10 @@ function AllCart() {
          <table>
             <thead>
                 <tr>
-                    <td  style={{fontWeight:"700",textAlign:'center', backgroundColor:' rgb(83, 255, 246)', width:"200px"}}>User ID</td>
-                    <td  style={{fontWeight:"700",textAlign:'center',backgroundColor:'  rgb(83, 255, 246)',width:"200px"}}>Product ID</td>
-                    <td  style={{fontWeight:"700",textAlign:'center',backgroundColor:'  rgb(83, 255, 246)', width:"800px"}}>Product Name</td>
-                    <td  style={{fontWeight:"700",textAlign:'center',backgroundColor:'  rgb(83, 255, 246)',width:"200px"}}>Price</td>
+                    <td  style={{fontWeight:"700",textAlign:'center', backgroundColor:' rgb(83, 255, 246)', width:"200px", fontSize:"18px"}}>User ID</td>
+                    <td  style={{fontWeight:"700",textAlign:'center',backgroundColor:'  rgb(83, 255, 246)',width:"200px", fontSize:"18px"}}>Product ID</td>
+                    <td  style={{fontWeight:"700",textAlign:'center',backgroundColor:'  rgb(83, 255, 246)', width:"800px", fontSize:"18px"}}>Product Name</td>
+                    <td  style={{fontWeight:"700",textAlign:'center',backgroundColor:'  rgb(83, 255, 246)',width:"200px", fontSize:"18px"}}>Price</td>
                 </tr>
             </thead></table>
       {data.map((item, index) => (
@@ -52,10 +52,10 @@ function AllCart() {
          <table>
             <tbody>
                  <tr>
-                   <td  className='thehover' style={{fontWeight:"700",textAlign:'center', width:"200px"}}>{item.user_id}</td>
-                    <td  className='thehover' style={{fontWeight:"700",textAlign:'center',width:"200px"}}>{item.product_id}</td>
-                    <td  className='thehover' style={{fontWeight:"700",textAlign:'center', width:"800px"}}>{item.name_product}</td>
-                    <td  className='thehover' style={{fontWeight:"700",textAlign:'center',width:"200px"}}>{item.price} JD</td>
+                   <td  className='thehover' style={{fontWeight:"700",textAlign:'center', width:"200px", fontSize:"18px"}}>{item.user_id}</td>
+                    <td  className='thehover' style={{fontWeight:"700",textAlign:'center',width:"200px", fontSize:"18px"}}>{item.product_id}</td>
+                    <td  className='thehover' style={{fontWeight:"700",textAlign:'center', width:"800px", fontSize:"18px"}}>{item.name_product}</td>
+                    <td  className='thehover' style={{fontWeight:"700",textAlign:'center',width:"200px", fontSize:"18px"}}>{item.price} JD</td>
                 </tr>
             </tbody>
           </table>

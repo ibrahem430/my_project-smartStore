@@ -100,7 +100,7 @@ list-style: none;
   @media (max-width: 768px) {
  .logo{
     margin-left: 0px;
- font-size: 16px ;
+ font-size: 22px ;
  color: white;
  margin-top: 55px ;
 }
@@ -111,27 +111,31 @@ list-style: none;
     border: none;
 
     font-weight: 700;
-font-size: 14px;
+font-size: 16px;
 list-style: none;
 }
     .cart {
-    width: 20px;
+    width: 32px;
     margin-left: 20px;
    
     
     /* transition: transform 0.3s, filter 0.3s; */
   }
   .nav-cart-count{
-    width:10px;
-    height: 10px;
+    width:15px;
+    height: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 17px;
-    margin-left: -10px;
+    
     border-radius: 11px;
     font-size: 14px;
     background: red;
     color: white;
+}
+.List2{
+ 
+    gap: 12px;
 }
 }
