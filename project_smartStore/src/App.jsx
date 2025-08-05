@@ -65,10 +65,10 @@ function App() {
 
     <Route path="/pcs_gaming" element={<ShopCategory banner={pc_gaming_banner} category="pcs_gaming" />} />
   <Route path="/Laptop_gaming" element={<ShopCategory banner={laptop_gaming_banner} category="Laptop_gaming" />} />
-  <Route path="/keyboards_gaming" element={<ShopCategory banner={keyboard_gaming_banner} category="keyboard_gaming" />} />
+  <Route path="/keyboards_gaming" element={<ShopCategory banner={keyboard_gaming_banner} category="keyboard gaming" />} />
   <Route path="/mouse_gaming" element={<ShopCategory banner={mouse_gaming_banner} category="mouse gaming" />} />
   <Route path="/headphones_gaming" element={<ShopCategory banner={headset_gaming_banner} category="headset gaming" />} />
-  <Route path="/monitor_gaming" element={<ShopCategory banner={mounitor_gaming_banner}  category="monitor_gaming" />} />
+  <Route path="/monitor_gaming" element={<ShopCategory banner={mounitor_gaming_banner}  category="monitor gaming" />} />
 </Routes>
 
   <Footer/>
