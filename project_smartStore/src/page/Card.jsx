@@ -129,7 +129,7 @@ fetch('http://localhost:5000/update-cart', {
         </Link>
       </div>
 
-      <h3 className='price'>${props.price}</h3>
+      <h3 className='price'>JOD{props.price}</h3>
 
       <div className='thebutton'>
         <button className="click" onClick={handleAdd}>Add to Cart</button>

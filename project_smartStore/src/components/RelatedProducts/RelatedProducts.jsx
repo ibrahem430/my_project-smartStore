@@ -19,6 +19,7 @@ function RelatedProducts({ product }) {
       <div className='flex2'>
         {data.map((item) => {
           if (item.type === product.type && item.id !== product.id) {
+            
             return (
               <Card
                 key={item.id}

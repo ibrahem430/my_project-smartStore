@@ -120,7 +120,7 @@ function Cart() {
                 </Link>
               </td>
               <td style={{width:"120px"}}>{item.type}</td>
-              <td style={{width:"120px"}}>${item.price}</td>
+              <td style={{width:"120px"}}>JOD{item.price}</td>
               <td style={{width:"120px"}} >{item.quantity}</td>
               <td style={{width:"120px"}}>
                 <button

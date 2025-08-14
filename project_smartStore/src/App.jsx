@@ -52,7 +52,7 @@ function App() {
 
   {/* Product Category Routes - all lowercase and singular */}
   <Route path="/pcs" element={<ShopCategory banner={pc_banner} category="pcs" />} />
-  <Route path="/Laptop" element={<ShopCategory banner={labtop_banner} category="Laptop" />} />
+  <Route path="/Laptop" element={<ShopCategory banner={labtop_banner} category="laptop" />} />
   <Route path="/keyboards" element={<ShopCategory banner={keyboard_banner} category="keyboard" />} />
   <Route path="/mouse" element={<ShopCategory banner={mouse_banner} category="mouse" />} />
   <Route path="/headphones" element={<ShopCategory banner={headset_banner} category="headset" />} />
@@ -64,7 +64,7 @@ function App() {
 
 
     <Route path="/pcs_gaming" element={<ShopCategory banner={pc_gaming_banner} category="pcs_gaming" />} />
-  <Route path="/Laptop_gaming" element={<ShopCategory banner={laptop_gaming_banner} category="Laptop_gaming" />} />
+  <Route path="/Laptop_gaming" element={<ShopCategory banner={laptop_gaming_banner} category="laptop gaming" />} />
   <Route path="/keyboards_gaming" element={<ShopCategory banner={keyboard_gaming_banner} category="keyboard gaming" />} />
   <Route path="/mouse_gaming" element={<ShopCategory banner={mouse_gaming_banner} category="mouse gaming" />} />
   <Route path="/headphones_gaming" element={<ShopCategory banner={headset_gaming_banner} category="headset gaming" />} />
@@ -78,30 +78,3 @@ function App() {
 
 export default App;
 
-
-//   <BrowserRouter>
-// <Navbar/>
-
-// <Routes>
-//   <Route path="/" element={<Shop />} />
-//   <Route path="/about" element={<About />} />
-//   <Route path="/cart" element={<Cart />} />
-//   <Route path="/login" element={<LoginSignup />} />
-//   <Route path="/register" element={<LoginSignup />} />
-//   <Route path="/contact" element={<Contact />} />
-
-//   {/* Product Category Routes - all lowercase and singular */}
-//   <Route path="/pcs" element={<ShopCategory banner={pc_banner} category="pcs" />} />
-//   <Route path="/Laptop" element={<ShopCategory banner={labtop_banner} category="Laptop" />} />
-//   <Route path="/gaming" element={<ShopCategory category="gaming" />} />
-//   <Route path="/keyboard" element={<ShopCategory category="keyboard" />} />
-//   <Route path="/mouse" element={<ShopCategory  category="mouse" />} />
-//   <Route path="/headphones" element={<ShopCategory banner={headset_banner} category="headphones" />} />
-//   <Route path="/monitor" element={<ShopCategory category="monitor" />} />
-//   <Route path="/charges" element={<ShopCategory category="charges" />} />
-//   <Route path="/pageOfItem/:productId" element={<PageOfItem  />} />
-  
-// </Routes>
-
-//   <Footer/>
-//    </BrowserRouter>

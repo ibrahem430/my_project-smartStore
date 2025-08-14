@@ -1,61 +1,114 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import "./ThePageOfItem.css";
+import Swal from 'sweetalert2';
+
 
 function ThePageOfItem(props) {
   const { product } = props;
   const navigate = useNavigate();
-  const userId = 1;
+  const userId = localStorage.getItem('userId');  
 
   const [data, setData] = useState([]);
-  const handleAdd = () => {
-    const found = data.find(item => item.product_id === product.id);
+useEffect(() => {
+    if (!userId) return;
+    fetch(`http://localhost:5000/getTheProduct/${userId}`)
+      .then((res) => res.json())
+      .then((data) => setData(data))
+      .catch((err) => console.error("Fetch error:", err));
+  }, [userId]);
 
-    if (!found) {
-      // 🟢 Product not in cart → Add it
-      fetch('http://localhost:5000/add-to-cart', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          user_id: userId,
-          product_id: product.id,
-          quantity: 1,
-          name_product: product.name,
-          price: product.price
-        }),
-      })
-        .then((res) => res.text())
-        .then((data) => {
-          alert(`${product.name} added to cart`);
-          navigate('/cart');
-          window.location.reload(); // optional
-        })
-        .catch((err) => {
-          alert(`Add error`);
-          console.error(err);
-        });
-    } else {
-      fetch('http://localhost:5000/update-cart', {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          user_id: userId,
-          product_id: product.id,
-          quantity: found.quantity + 1,
-        }),
-      })
-        .then((res) => res.text())
-        .then((data) => {
-          alert(`Quantity updated`);
-          navigate('/cart');
-          window.location.reload(); // optional
-        })
-        .catch((err) => {
-          alert(`Update error`);
-          console.error(err);
-        });
-    }
-  };
+  const  handleAdd = () => {
+     if (!userId) {
+       alert("Please login first!");
+       navigate('/login');
+       return;
+     }
+ 
+     const found = data.find(item => item.product_id === product.id);
+ 
+     if (!found) {
+ fetch('http://localhost:5000/add-to-cart', {
+   method: 'POST',
+   headers: { 'Content-Type': 'application/json' },
+   body: JSON.stringify({
+     user_id: userId,
+     product_id: product.id,
+     quantity: 1,
+     name_product: product.name,
+     price: product.price,
+     image:  `http://localhost:5000/image/${product.image}`
+   }),
+ })
+   .then((res) => res.text())
+   .then(() => {
+     Swal.fire({
+     
+       text: product.name,
+       imageUrl:   `http://localhost:5000/image/${product.image}`,
+       imageWidth: 300,
+       imageHeight: 200,
+       imageAlt: "Custom image",
+   
+       confirmButtonText: "Yes",                  
+     }).then((result) => {
+ 
+       if (result.isConfirmed) {
+         window.location.reload();     
+       }
+     });
+   })
+   .catch((err) => {
+     console.error("Add to cart error:", err);
+     Swal.fire({
+       icon: "error",
+       title: "Add failed",
+       text: "Could not add the product to the cart."
+     });
+   })
+ 
+           
+           // window.location.reload(); // optional
+       
+         .catch((err) => {
+           alert(`Add error`);
+           console.error(err);
+         });
+     } else {
+ fetch('http://localhost:5000/update-cart', {
+   method: 'PUT',
+   headers: { 'Content-Type': 'application/json' },
+   body: JSON.stringify({
+     user_id: userId,
+     product_id: product.id,
+     quantity: found.quantity + 1,
+   }),
+ })
+   .then((res) => res.text())
+   .then(() => {
+     Swal.fire({
+     
+       text: product.name,
+       imageUrl:   `http://localhost:5000/image/${product.image}`,
+       imageWidth: 300,
+       imageHeight: 200,
+       imageAlt: "Custom image",
+   
+       confirmButtonText: "Yes",
+     
+     }).then((result) => {
+       if (result.isConfirmed) {
+         window.location.reload();
+       }
+     });
+   })
+   .catch((err) => {
+     alert("Update error");
+     console.error("Update error:", err);
+   });
+ 
+     }
+   };
 
   return (
     <div>
